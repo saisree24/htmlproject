@@ -1,7 +1,16 @@
 .login-page{
+    z-index: 2;
     & .user{
         right: 0px !important;
         top: -35px !important;
+    }
+    & .signin{
+        border-radius: 30px;
+        padding: 2px 33px;
+    }
+
+    & .newuser{
+        font-size: 14px;
     }
     
 }
