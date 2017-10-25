@@ -1,0 +1,51 @@
+<div layout-fill layout="column">
+    <div flex layout="column" class="containerpart" ng-nicescroll >
+      <div layout="column" layout-gt-sm="row" class="m-b-25" layout-gt-sm="row" layout-align-gt-sm="space-between center" layout-align="space-between start">
+        <div layout="column" flex>
+          <h2 class="md-title m-0 black-text" ng-cloak>{{pageTitle}} - <small>{{subTitle}}</small></h2>
+          <span class="md-body-1 m-t-3">Chemistry - <small>Mole Concept and Chemistry</small></span>
+        </div>
+
+        <div layout="row" flex layout-align="end end"  ng-class="{'m-t-20':$mdMedia('xs'), 'm-t-20':$mdMedia('sm')}">
+          <div layout="column"  class="m-r-10" layout-align-gt-sm="end end">
+            <h2 class="md-subhead m-0">Session : 1 <span class="green-text md-body-1">Lecture</span></h2>
+            <span class="md-caption grey-text m-t-3"> Aug 24 - Sep 28, 2016 </span>
+          </div>
+          <md-button class="md-icon-button white border-fill" aria-label="prev" ng-click="prev()">
+            <md-icon>keyboard_arrow_left</md-icon>
+          </md-button>
+          <md-button class="md-icon-button white border-fill" aria-label="next" ng-click="next()">
+            <md-icon>keyboard_arrow_right</md-icon>
+          </md-button>
+        </div>
+      </div>
+
+      <div layout="row" class="border-bottom" layout-align="center center">
+        <md-tabs flex="50">
+          <md-tab label md-on-select="changedata(type)" md-swipe-content="true" md-on-deselect ng-repeat="type in worktype">
+            <md-icon class="m-r-5" hide-gt-sm><i class="lms-class-work"></i></md-icon>
+            <span hide-sm ng-bind="type.name"></span>
+          </md-tab>
+        </md-tabs>
+        <span flex></span>
+
+        <div layout="row">
+          <span class="m-r-15 md-caption">Today</span>
+          <span class="m-r-15 md-caption grey-text text-lighten-1" >Week</span>
+          <span class="m-r-15 md-caption grey-text text-lighten-1">Month</span>
+          <span class="m-r-25 md-caption grey-text text-lighten-1">Year</span>
+        </div>
+      </div>
+
+      <div layout="column" layout-align="center center" flex ng-if="false" ng-include="'app/view/noresource.html'"></div>
+
+      <div layout="column" layout-align="center center" flex ng-if="loading">
+        <md-progress-circular md-mode="indeterminate" md-diameter="150"></md-progress-circular>
+      </div>
+
+
+
+      <div class="m-t-25" flex ng-include="'app/common/resourcelist/resourcecard.html'" ng-if="!loading"></div>
+
+    </div>
+</div>

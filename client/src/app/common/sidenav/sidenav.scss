@@ -1,0 +1,14 @@
+.lms_leftbar{
+  width: 350px;
+  background: #2a58ad;
+  & .profileDetails{
+    height: 300px;
+    width: 100%;
+    min-height: 300px;
+    & img{
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+  }
+}

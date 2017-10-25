@@ -1,0 +1,33 @@
+<div layout-fill layout="column">
+    <div flex layout="column" class="containerpart" ng-nicescroll>
+      <div layout="row" class="m-b-25" layout-align="space-between center" >
+        <div layout="column">
+          <h2 class="md-title m-0 black-text" ng-cloak>{{pageTitle}}</small></h2>
+          <span class="md-body-1 m-t-3">Chemistry - <small>Mole Concept and Chemistry</small></span>
+        </div>
+
+        <md-button class="md-raised green white-text">Add</md-button>
+      </div>
+
+      <div layout="row" class="border-bottom" layout-align="start center">
+        <md-tabs flex>
+          <md-tab label md-on-select="changedata(type)" md-on-deselect ng-repeat="type in worktype" >
+            <!-- <md-icon class="m-r-5" hide-gt-sm><i class="lms-class-work"></i></md-icon> -->
+            <span ng-bind="type.name"></span>
+          </md-tab>
+        </md-tabs>
+      </div>
+
+      <!-- <div layout="column" layout-align="center center" flex>
+        <i class="material-icons" style="font-size:8em;color:#ccc;">mood_bad</i>
+        <p class="md-title">No Resources Found</p>
+      </div> -->
+
+      <div layout="column" layout-align="center center" flex ng-if="loading">
+        <md-progress-circular md-mode="indeterminate" md-diameter="150"></md-progress-circular>
+      </div>
+
+      <div class="m-t-25" flex   ng-include="pageview" ng-if="!loading" onload="finishLoading()"></div>
+
+    </div>
+</div>

@@ -1,0 +1,202 @@
+
+
+i[class*="lms-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'lms' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.lms-activities {
+  &:before {
+    content: $lms-activities;
+  }
+}
+.lms-assessment {
+  &:before {
+    content: $lms-assessment;
+  }
+}
+.lms-asset {
+  &:before {
+    content: $lms-asset;
+  }
+}
+.lms-reports {
+  &:before {
+    content: $lms-reports;
+  }
+}
+.lms-class-report {
+  &:before {
+    content: $lms-class-report;
+  }
+}
+.lms-school-plan {
+  &:before {
+    content: $lms-school-plan;
+  }
+}
+.lms-class-work {
+  &:before {
+    content: $lms-class-work;
+  }
+}
+.lms-concept-maps {
+  &:before {
+    content: $lms-concept-maps;
+  }
+}
+.lms-interaction {
+  &:before {
+    content: $lms-interaction;
+  }
+}
+.lms-experiment {
+  &:before {
+    content: $lms-experiment;
+  }
+}
+.lms-p-grade {
+  &:before {
+    content: $lms-p-grade;
+  }
+}
+.lms-home-plan {
+  &:before {
+    content: $lms-home-plan;
+  }
+}
+.lms-home {
+  &:before {
+    content: $lms-home;
+  }
+}
+.lms-lab {
+  &:before {
+    content: $lms-lab;
+  }
+}
+.lms-mind-maps {
+  &:before {
+    content: $lms-mind-maps;
+  }
+}
+.lms-notes {
+  &:before {
+    content: $lms-notes;
+  }
+}
+.lms-online-tutor {
+  &:before {
+    content: $lms-online-tutor;
+  }
+}
+.lms-online-tutoring {
+  &:before {
+    content: $lms-online-tutoring;
+  }
+}
+.lms-performance {
+  &:before {
+    content: $lms-performance;
+  }
+}
+.lms-plantime {
+  &:before {
+    content: $lms-plantime;
+  }
+}
+.lms-progress {
+  &:before {
+    content: $lms-progress;
+  }
+}
+.lms-projects {
+  &:before {
+    content: $lms-projects;
+  }
+}
+.lms-qa {
+  &:before {
+    content: $lms-qa;
+  }
+}
+.lms-resources {
+  &:before {
+    content: $lms-resources;
+  }
+}
+.lms-resourceusage {
+  &:before {
+    content: $lms-resourceusage;
+  }
+}
+.lms-school {
+  &:before {
+    content: $lms-school;
+  }
+}
+.lms-slm {
+  &:before {
+    content: $lms-slm;
+  }
+}
+.lms-social {
+  &:before {
+    content: $lms-social;
+  }
+}
+.lms-studyplan {
+  &:before {
+    content: $lms-studyplan;
+  }
+}
+.lms-external-rec {
+  &:before {
+    content: $lms-external-rec;
+  }
+}
+.lms-system-rec {
+  &:before {
+    content: $lms-system-rec;
+  }
+}
+.lms-tlm {
+  &:before {
+    content: $lms-tlm;
+  }
+}
+.lms-teacher-rec {
+  &:before {
+    content: $lms-teacher-rec;
+  }
+}
+.lms-home-work {
+  &:before {
+    content: $lms-home-work;
+  }
+}
+.lms-time {
+  &:before {
+    content: $lms-time;
+  }
+}
+.lms-time-report {
+  &:before {
+    content: $lms-time-report;
+  }
+}
+.lms-wiki {
+  &:before {
+    content: $lms-wiki;
+  }
+}

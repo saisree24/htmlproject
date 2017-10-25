@@ -1,0 +1,30 @@
+// @mixin box-shadow-2($args1, $args2) {
+//     -webkit-box-shadow: $args1, $args2;
+//     -moz-box-shadow: $args1, $args2;
+//     box-shadow: $args1, $args2;
+// }
+
+@mixin generate-pad-mar($n,$d,$t,$in) {
+    $num: 0;
+    @while $num <= $n {
+        .m-#{$t}-#{$num} {
+            margin-#{$d}: #{$num}px !important;
+        }
+        .p-#{$t}-#{$num} {
+            padding-#{$d}: #{$num}px !important;
+        }
+        $num: $num + $in;
+    }
+}
+@mixin generate-pad-mar-all($n,$in) {
+    $num: 0;
+    @while $num <= $n {
+				.p-#{$num} {
+            padding: #{$num}px !important;
+        }
+        .m-#{$num} {
+            margin: #{$num}px !important;
+        }
+        $num: $num + $in;
+    }
+}

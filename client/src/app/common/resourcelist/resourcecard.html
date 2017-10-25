@@ -1,0 +1,86 @@
+<div class="lock-fab" layout="row" layout-align="end center" >
+  <md-fab-speed-dial   md-open="false" md-direction="up" class="md-scale">
+    <md-fab-trigger>
+      <md-button aria-label="menu" class="md-fab md-warn">
+        <md-icon>access_time</md-icon>
+        <md-tooltip md-direction="left">Total Time : 02:05:00</md-tooltip>
+      </md-button>
+    </md-fab-trigger>
+
+    <md-fab-actions>
+      <div class="relative">
+        <md-button aria-label="Twitter" class="md-fab md-raised md-mini" >
+          <md-icon ><i class="lms-activities black-text"></i></md-icon>
+          <md-tooltip md-direction="left" md-visible="tooltipVisible">Activities: 05:00 Mins</md-tooltip>
+        </md-button>
+        <div class="badge">5</div>
+      </div>
+
+      <div class="relative">
+        <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+          <md-icon><i class="lms-assessment black-text"></i></md-icon>
+          <md-tooltip md-direction="left" md-visible="tooltipVisible">Assessments: 00:00 Mins</md-tooltip>
+        </md-button>
+        <div class="badge">2</div>
+      </div>
+
+      <div class="relative">
+        <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+          <md-icon><i class="lms-asset black-text"></i></md-icon>
+          <md-tooltip md-direction="left" md-visible="tooltipVisible">Audio: 02:00 Mins</md-tooltip>
+        </md-button>
+        <div class="badge">0</div>
+      </div>
+
+      <div class="relative">
+        <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+          <md-icon ><i class="lms-resources black-text"></i></md-icon>
+          <md-tooltip md-direction="left" md-visible="tooltipVisible">Resources: 11:00 Mins</md-tooltip>
+        </md-button>
+        <div class="badge">1</div>
+      </div>
+    </md-fab-actions>
+  </md-fab-speed-dial>
+  </div>
+<md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-lg="4" md-cols-gt-lg="5"  md-gutter="1em" md-row-height="320px" >
+  <md-grid-tile  ng-repeat="item in resourceobj" >
+    <md-card class="p-5 resource_card lms_box_shadow" ng-click="null" ng-cloak>
+            <div class="img_box">
+              <img src="assets/images/default_resource_img.jpg" class="md-card-image" alt="Washed Out">
+              <div class="time_count">02:00</div>
+            </div>
+          <md-card-content>
+            <div layout="row">
+              <h4 class="m-0 md-caption text-uppercase">{{item}}</h4>
+              <span flex></span>
+              <span class="md-caption green-text" ng-if="item == 'worksheet'">completed</span>
+              <span class="md-caption orange-text" ng-if="item == 'activity'">Pending</span>
+            </div>
+            <p> The titles of Washed Out's breakthrough song... </p>
+          </md-card-content>
+          <div layout="row" layout-align="center center">
+            <span class="m-0 p-l-15 md-caption grey-text text-lighten-1">Teacher Module</span>
+            <span flex></span>
+            <md-menu md-position-mode="target-right target">
+              <md-button class="md-icon-button" aria-label="Settings" ng-click="$mdOpenMenu()">
+                <md-icon class="blue-grey-text text-lighten-3">more_vert</md-icon>
+              </md-button>
+              <md-menu-content width="2">
+                <md-menu-item>
+                  <md-button ng-click="null">
+                    <md-icon>create</md-icon>
+                    Edit
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ng-click="null">
+                    <md-icon>delete</md-icon>
+                    Delete
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+      </md-card>
+  </md-grid-tile>
+</md-grid-list>

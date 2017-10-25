@@ -1,0 +1,22 @@
+<div  layout-fill layout="column">
+  <div flex layout="column" class="containerpart" ng-nicescroll >
+    <div  layout="row" class="m-b-80">
+      <div layout="column" flex>
+        <h2 class="md-title m-0 black-text" ng-bind="pageTitle" ng-cloak></h2>
+        <span class="md-body-1 m-t-3">More about Knowledge</small></span>
+      </div>
+    </div>
+
+    <md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="3" md-cols-lg="3" md-cols-gt-lg="5"  md-gutter="2em" md-row-height="250px" >
+      <md-grid-tile  ng-repeat="item in subjectdata" >
+        <md-card class="p-5 repeat_animation subject_card lms_box_shadow" ng-click="null" ng-cloak md-ink-ripple>
+          <div layout-fill layout="column" layout-align="center center">
+            <img ng-src="assets/images/subject_icons/{{item}}.png" alt="{{item}}" style="width:65px;">
+            <h4>{{item}}</h4>
+          </div>
+
+        </md-card>
+      </md-grid-tile>
+    </md-grid-list>
+  </div>
+</div>

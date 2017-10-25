@@ -1,0 +1,59 @@
+.searchchapters{
+  width: 50%;
+  height: 40px;
+  margin: 0 auto 60px auto;
+  position: relative;
+  & input{
+    background: #fff;
+    height: 40px;
+    width: 100%;
+    border-radius: 0px;
+    padding: 15px;
+    padding-right: 65px;
+    font-size: 24px;
+    outline: none;
+    box-shadow: none !important;
+    border: 0;
+  }
+  & .md-button{
+    position: absolute;
+    right: 0;
+  }
+}
+.chapter_card{
+  & md-list-item{
+    background: #fff;
+    min-height: 80px;
+    margin-bottom: 15px;
+    & .md-button:not([disabled]):hover{
+      background-color: inherit !important;
+    }
+    & .md-list-item-inner{
+      background: #fff;
+      min-height: 80px;
+    }
+  }
+  & .animate-repeat{
+    position: relative;
+  }
+}
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move {
+    -webkit-transition: all linear 0.5s;
+    transition: all linear 0.5s;
+}
+
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move {
+    opacity: 0;
+    top: -15px;
+}
+
+.animate-repeat.ng-enter.ng-enter-active,
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active {
+    opacity: 1;
+    top: 0;
+}

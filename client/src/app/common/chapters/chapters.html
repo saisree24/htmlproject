@@ -1,0 +1,28 @@
+<div  layout-fill layout="column">
+  <div flex layout="column" class="containerpart"  >
+    <div  layout="row">
+      <div layout="column" flex>
+        <h2 class="md-title m-0 black-text" ng-bind="pageTitle" ng-cloak></h2>
+        <span class="md-body-1 m-t-3">More about Knowledge</small></span>
+      </div>
+      <span flex></span>
+      <div class="searchchapters lms_box_shadow" layout="row" layout-align="center center">
+        <input type="text" name="chpatersearch" ng-model="chpatersearch" placeholder="Search">
+        <md-button class="md-icon-button" aria-label="search">
+          <md-icon class="blue-grey-text text-lighten-3">search</md-icon>
+        </md-button>
+      </div>
+    </div>
+    <div flex ng-nicescroll>
+      <md-list class="chapter_card">
+        <md-list-item ng-repeat="item in subjectdata | filter:chpatersearch" ng-click="null" class="noright animate-repeat">
+        <img alt="{{ item }}" ng-src="assets/images/subject_icons/{{item}}.png" class="md-avatar" />
+        <p>{{ item }}</p>
+        </md-list-item>
+      </md-list>
+    </div>
+
+
+
+  </div>
+</div>
