@@ -8,6 +8,12 @@
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
+      .state('login', {
+        url: '/login',
+        templateUrl: 'app/modules/main/main.html',
+        controller: 'MainController',
+        controllerAs: 'main'
+      })
       .state('lms', {
         abstract: true,
         reload: true,
@@ -16,6 +22,7 @@
         controller: 'MainController',
         controllerAs: 'main'
       })
+
       .state('lms.subjects', {
         url: '/subjects',
         templateUrl: 'app/common/subjects/subjects.html',
@@ -60,7 +67,7 @@
       });
 
 
-    $urlRouterProvider.otherwise('/schoolplan');
+    $urlRouterProvider.otherwise('/login');
   }
 
 })();

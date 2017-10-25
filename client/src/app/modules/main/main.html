@@ -6,30 +6,33 @@
       </md-card-title-text>
     </md-card-title>
     <md-card-content class="md-padding relative" layout="column">
-
         <md-button aria-label="User" class="user md-fab md-raised absolute">
             <md-icon class="material-icons blue-text">account_circle</md-icon>
         </md-button>
-
-
       <md-input-container class="md-icon-float md-block">
         <label>Phone</label>
         <md-icon class="material-icons name">phone</md-icon>
-        <input type="text">
-      </md-input-container> 
+        <input type="text" ng-model="user">
+      </md-input-container>
 
-      <md-input-container class="md-icon-float md-block m-0">
+      <md-input-container class="md-icon-float md-block m-0" ng-if="!isNewUser">
         <label>Password</label>
         <md-icon class="material-icons name">vpn_key</md-icon>
-        <input type="password">
-      </md-input-container>   
+        <input type="password" ng-model="password">
+      </md-input-container>
 
-      <div layout="row" layout-align="end center" class="blue-text newuser">New User?</div>
-      
-      
+      <md-input-container class="md-icon-float md-block m-0" ng-if="hasOtp">
+        <label>OTP</label>
+        <md-icon class="material-icons name">phonelink_lock</md-icon>
+        <input type="password" ng-model="otp">
+      </md-input-container>
+
+
+      <div layout="row" layout-align="end center" class="blue-text newuser" ng-click="isNewUser= !isNewUser">New User?</div>
     </md-card-content>
     <md-card-actions class="md-padding m-t-0 p-t-0" layout="row" layout-align="center center">
-      <md-button class="md-raised md-primary signin">SIGN IN</md-button> 
+      <md-button class="md-raised md-primary signin" ng-click="sendOtp()" ng-if="isNewUser">Send OTP</md-button>
+      <md-button class="md-raised md-primary signin" ng-click="login()" ng-if="!isNewUser">SIGN IN</md-button>
     </md-card-actions>
   </md-card>
   </div>
