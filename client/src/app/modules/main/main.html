@@ -1,4 +1,4 @@
-<div class="lms_leftbar" layout="column" show-gt-sm hide-sm flex="20">
+<!-- <div class="lms_leftbar" layout="column" show-gt-sm hide-sm flex="20">
   <div layout="column" class="profileDetails" layout-align="center center">
     <img src="assets/images/user_default.png" alt="" class="m-b-10">
     <div class="m-0 white-text md-subhead">S Sai Srikanth</div>
@@ -10,4 +10,41 @@
 <div layout="column" layout-fill class="relative" >
   <lms-navbar></lms-navbar>
   <div flex layout="column" ui-view style="overflow:hidden;" class="page-ui-view"></div>
-</div>
+</div> -->
+
+
+<div class="login-page" layout="row" layout-align="center center" flex="100">
+  <md-card layout="column" flex="90" flex-lg="25">
+    <md-card-title class="blue white-text">
+      <md-card-title-text>
+        <span class="md-headline">SIGN IN</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content class="md-padding relative" layout="column">
+
+        <md-button aria-label="User" class="user md-fab md-raised absolute">
+            <md-icon class="material-icons blue-text">account_circle</md-icon>
+        </md-button>
+     
+      <!-- <md-input-container md-no-float class="md-block">
+        <md-icon class="material-icons">phone</md-icon>
+        <input type="number" placeholder="Phone Number">
+      </md-input-container> -->
+
+      <md-input-container class="md-icon-float md-block">
+        <label>Phone</label>
+        <md-icon class="material-icons name">phone</md-icon>
+        <input type="number">
+      </md-input-container> 
+
+      <md-input-container class="md-icon-float md-block m-0">
+        <label>Password</label>
+        <md-icon class="material-icons name">vpn_key</md-icon>
+        <input type="password">
+      </md-input-container>      
+    </md-card-content>
+    <md-card-actions class="md-padding" layout="row" layout-align="center center">
+      <md-button class="md-raised md-primary">SIGN IN</md-button> 
+    </md-card-actions>
+  </md-card>
+  </div>
