@@ -11,9 +11,9 @@ const route = require('./routes/route');
 
 const domain_url = 'localhost:27017';
 
-const database_name = 'contactlist';
+const database_name = 'test';
 
-const db_link = 'mongodb://'+domain_url+'/'+database_name;
+const db_link = 'mongodb://'+ domain_url+'/'+database_name;
 
 //connect to mongoDB
 mongoose.connect(db_link);
