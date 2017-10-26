@@ -1,11 +1,11 @@
 (function() {
   'use strict';
 
-  angular.module('lmsApp')
-    .controller('MainController', MainController);
+  angular.module('nextHealthCare')
+    .controller('LoginController', LoginController);
 
   /** @ngInject */
-  function MainController($scope,$timeout,$mdMedia,$state, $http, dataService) {
+  function LoginController($scope,$timeout,$mdMedia,$state, $http, dataService) {
     $scope.pageTitle = 'Page Name';
     $scope.isOpen = false;
     $scope.$mdMedia = $mdMedia;
