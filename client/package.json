@@ -2,6 +2,7 @@
   "name": "nextHealthCare",
   "version": "0.0.0",
   "dependencies": {
+    "angular-chart.js": "^1.1.1",
     "animate.scss": "0.0.6",
     "gulp-ruby-sass": "^2.1.1"
   },
