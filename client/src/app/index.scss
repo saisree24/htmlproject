@@ -38,6 +38,18 @@
 @include generate-pad-mar(100,right,r,1);
 @include generate-pad-mar(100,left,l,1);
 @include generate-pad-mar-all(100,1);
+$primarycolor : #2a58ad;
+$accentcolor : #23aaea;
+$addoncolor: #67ba2e;
+
+.primary-color{ color:$primarycolor !important; }
+.accent-color{ color:$accentcolor !important; }
+.addon-color{ color:$addoncolor !important; }
+
+.primary-bg{ background-color:$primarycolor !important; }
+.accent-bg{ background-color:$accentcolor !important; }
+.addon-bg{ background-color:$addoncolor !important; }
+
 .width100{
   width: 100%;
 }
@@ -153,6 +165,9 @@ md-tooltip {
 }
 .text-uppercase{
   text-transform: uppercase !important;
+}
+.text-center{
+  text-align: center;
 }
 
 .up-btn{
