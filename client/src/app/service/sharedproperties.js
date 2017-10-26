@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('lmsApp')
+    .module('nextHealthCare')
     .service("SharedProperties", function () {
         var _userName = null;
 

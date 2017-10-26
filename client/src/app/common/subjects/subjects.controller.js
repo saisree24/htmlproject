@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('lmsApp')
+    .module('nextHealthCare')
     .controller('subjectsController', subjectsController);
 
   /** @ngInject */

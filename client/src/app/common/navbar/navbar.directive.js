@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('lmsApp')
+    .module('nextHealthCare')
     .directive('lmsNavbar', lmsNavbar)
 
     .directive('backButton', ['$window', function($window) {

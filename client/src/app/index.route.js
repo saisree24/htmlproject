@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('lmsApp')
+    .module('nextHealthCare')
     .config(routerConfig);
 
   /** @ngInject */
@@ -10,14 +10,12 @@
     $stateProvider
       .state('login', {
         url: '/login',
-        templateUrl: 'app/modules/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'main'
+        templateUrl: 'app/modules/login/login.html',
+        controller: 'LoginController',
+        controllerAs: 'login'
       })
-      .state('lms', {
-        abstract: true,
-        reload: true,
-        url: '',
+      .state('dashboard', {
+        url: '/dashboard',
         templateUrl: 'app/modules/main/main.html',
         controller: 'MainController',
         controllerAs: 'main'

@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('lmsApp')
+    .module('nextHealthCare')
     .constant('malarkey', malarkey)
     .constant('moment', moment);
 

@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  angular.module('lmsApp')
+  angular.module('nextHealthCare')
     .service('dataService', ['$http',
       function($http) {
         // get user credentials
