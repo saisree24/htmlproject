@@ -25,6 +25,13 @@
         templateUrl: 'app/modules/dashboard/home.html',
         controller: 'DashboardController',
         controllerAs: 'dashboard'
+      })
+
+      .state('dashboard.student', {
+        url: '/student',
+        templateUrl: 'app/modules/student/studentbmi.html',
+        controller: 'StudentbmiController',
+        controllerAs: 'studentbmi'
       });
       // .state('dashboard.subjects', {
       //   url: '/subjects',
