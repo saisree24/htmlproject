@@ -40,7 +40,33 @@
             sclass: 'II Class',
             sdescription: 'language feel it. Its a simple request, as well...'
           }
-      ]
+      ];
+
+      $scope.slists = [
+        {
+          age: 15,
+          bgroup: ' B+'
+        }
+      ];
+
+      $scope.lists = [
+        {
+          icon: 'edit',
+          name: 'Edit'
+        },
+        {
+          icon: 'remove_red_eye',
+          name: 'View'
+        },
+        {
+          icon: 'delete',
+          name: 'Delete'
+        }
+        
+      ];
+
+  
+  
 
     }
   })();

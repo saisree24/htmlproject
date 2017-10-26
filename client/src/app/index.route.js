@@ -32,6 +32,13 @@
         templateUrl: 'app/modules/student/studentbmi.html',
         controller: 'StudentbmiController',
         controllerAs: 'studentbmi'
+      })
+      
+      .state('dashboard.studentlist', {
+        url: '/studentlist',
+        templateUrl: 'app/modules/student/studentlist/studentlist.html',
+        controller: 'StudentbmiController',
+        controllerAs: 'studentlist'
       });
 
 

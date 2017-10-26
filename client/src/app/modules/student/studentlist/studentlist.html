@@ -1,0 +1,48 @@
+<div class="p-l-50 p-r-50 p-t-20 " ng-nicescroll>
+    <div layout="row" layout-align="space-between center">
+        <h1 class="md-headline black-text">Student List</h1>
+        <md-button class="md-button md-raised addon-bg white-text">Add a New Student </md-button>
+    </div>
+
+
+    <md-list ng-repeat="slist in slists" class="height100">
+        <md-list-item class="md-2-line m-b-0 blue-grey lighten-4" layout="row" layout-align="space-between center">
+                         
+            <div layout="row" flex>
+                    <p class="accent-color">Student name</p>
+                    <p class="blue-grey-text lighten-3">Age:
+                        <span class="green-text">{{slist.age}}</span> Blood Group:
+                        <span class="green-text">{{slist.bgroup}}</span>
+                    </p>
+                </div>
+                
+         
+        </md-list-item>
+        <md-list-item class="md-2-line white m-b-10">
+            <div class="md-list-item-text p-15" layout="row" layout-align="start center">
+                <img src="assets/images/user_default.png" class="md-avatar" />
+                <div layout="column" flex>
+                    <h3 class="accent-color">Student name</h3>
+                    <p class="blue-grey-text lighten-3">Age:
+                        <span class="green-text">{{slist.age}}</span> Blood Group:
+                        <span class="green-text">{{slist.bgroup}}</span>
+                    </p>
+                </div>
+                <md-menu>
+                    <md-button aria-label="Open more interactions menu" class="md-icon-button md-primary" ng-click="$mdOpenMenu()">
+                        <md-icon md-menu-origin class="material-icons">more_horiz</md-icon>
+                    </md-button>
+                    <md-menu-content width="2">
+                        <md-menu-item ng-repeat="list in lists">
+                            <md-button class="md-mini" ng-click="ctrl.redial($event)">
+                                <md-icon class="green-text list-icon" md-menu-align-target>{{list.icon}}</md-icon>
+                                {{list.name}}
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </div>
+        </md-list-item>
+    </md-list>
+
+</div>
