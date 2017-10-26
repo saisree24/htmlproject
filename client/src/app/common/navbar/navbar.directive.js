@@ -36,10 +36,10 @@
       var vm = this;
       $scope.selectedIndex = 0;
       $scope.subjectslist = function(){
-        $state.transitionTo('lms.subjects');
+        $state.transitionTo('dashboard.subjects');
       }
       $scope.chapterslist = function(){
-        $state.transitionTo('lms.chapters');
+        $state.transitionTo('dashboard.chapters');
       }
 
       // $scope.$watch('selectedIndex', function(current, old) {
@@ -65,19 +65,19 @@
 
       $scope.changedata = function(val){
         if(val == 0){
-          $state.transitionTo('lms.schoolplan');
+          $state.transitionTo('dashboard.schoolplan');
           $scope.selectedIndex = 0;
         }
         if(val == 1){
-          $state.transitionTo('lms.studyplan');
+          $state.transitionTo('dashboard.studyplan');
           $scope.selectedIndex = 1;
         }
         if(val == 2){
-          $state.transitionTo('lms.socialview');
+          $state.transitionTo('dashboard.socialview');
           $scope.selectedIndex = 2;
         }
         if(val == 3){
-          $state.transitionTo('lms.analytics');
+          $state.transitionTo('dashboard.analytics');
           $scope.selectedIndex = 3;
         }
       }
