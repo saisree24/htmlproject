@@ -10,6 +10,7 @@ var app = express();
 const route = require('./routes/route');
 
 const domain_url = '192.168.33.168:27017';
+//const domain_url = 'http://192.168.33.168:3000';
 
 const database_name = 'test';
 
