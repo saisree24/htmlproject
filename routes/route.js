@@ -18,6 +18,7 @@ router.post('/sendtextmsg', (req, res, next)=>{
     var otp = Math.floor(Math.random()*89999+100000) + 4;
     var client = require('twilio')(accountSid, authToken);
     var isNewUser = false;
+    console.log('otp', otp);
     Credentials.findOne({user:req.body.user}, function(err,response){
         if(err){
           res.json({msg: 'Some Network Error', status: false});
@@ -72,70 +73,53 @@ router.post('/checkotp', (req,res,next)=>{
 });
 
 
-router.post('/studentDetails', (req,res,next)=>{
+// add student
+router.post('/addstudent', (req,res,next)=>{
   let newStudent = new Students({
       user: req.body.user,
-      password: null,
-      otp: otp
+      sfname: req.body.sfname,
+      sdob: req.body.sdob,
+      sheight: req.body.sheight,
+      sweight: req.body.sweight
   });
-  newCredentials.save((err, credentials)=>{
+  newStudent.save((err, Students)=>{
     if(err){
-        res.json({msg:'Failed to add credentials'});
+        res.json({msg:'Failed to add student', status: false});
     }else{
-      res.json({msg:'Credentials added successfully'});
+      res.json({msg:'Student Details Added Successfully', status: true});
     }
   });
 });
 
+// update student
+router.post('/updatestudent', (req,res,next)=>{
+  Students.findOneAndUpdate({user:req.body.user}, req.body, function(err, response){
+    if(err){
+      res.json({msg: 'Something went wrong with student data.', status: false});
+    }else{
+      res.json({msg: 'Student Details updated successfully.', status: true});
+    }
+  });
+});
 
-router.post('/getStudentDetails', (req,res,next)=>{
-    Students.findOne({sfname:req.body.sfname, sdob:req.body.sdob, srnum: req.body.srnum}, function(err, response){
+// delete student
+router.post('/deletestudent', (req,res,next)=>{
+  Students.remove({user:req.body.user}, function(err, response){
+    if(err){
+      res.json({msg: 'Something went wrong with student id.', status: false});
+    }else{
+      res.json({msg: 'Student Details deleted successfully.', status: true});
+    }
+  });
+});
+// get student details
+router.get('/getStudentDetails', (req,res,next)=>{
+    Students.find(function(err, response){
         if(err){
-          res.json({msg: 'No record Found'});
+          res.json({msg: 'Something went Wrong'});
         }else{
           res.json(response);
         }
-    });
-});
-
-router.get('/credentials', (req,res,next)=>{
-    Credentials.find(function(err,credentials){
-        res.json(credentials);
-    });
-});
-router.post('/credential/:user', (req,res,next)=>{
-    Credentials.findOne({user:req.body.user}, function(err,credentials){
-        if(err){
-          res.json({msg: 'No record Found'});
-        }else{
-          res.json(credentials);
-        }
-    });
-});
-
-
-router.post('/checkcredentials', (req,res,next)=>{
-    Credentials.findOne({user:req.body.user, password:req.body.password}, function(err,credentials){
-        if(err){
-          res.json({msg: 'No record Found'});
-        }else{
-          res.json(credentials);
-        }
-    });
-});
-
-
-router.post('/credentials', (req,res,next)=>{
-    let newCredentials = new Credentials({
-        user: req.body.user,
-        password:req.body.password
-    });
-    newCredentials.save((err, credentials)=>{
-      if(err){
-          res.json({msg:'failed to add contact'});
-      }else{
-        res.json({msg:'Contact added successfully'});
-      }
     });
 });
 
