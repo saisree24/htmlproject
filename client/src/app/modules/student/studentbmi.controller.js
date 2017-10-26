@@ -12,8 +12,33 @@
       $scope.cardslists = [
           {
               sname: 'Symonds Andrew',
-              simage: 'assets/images/student1.jpg',
+              simage: 'assets/images/student3.jpg',
+              sclass: 'II Class',
               sdescription: 'language feel it. Its a simple request, as well...'
+          },
+          {
+            sname: 'Symonds Andrew',
+            simage: 'assets/images/student3.jpg',
+            sclass: 'II Class',
+            sdescription: 'language feel it. Its a simple request, as well...'
+          },
+          {
+            sname: 'Symonds Andrew',
+            simage: 'assets/images/student3.jpg',
+            sclass: 'II Class',
+            sdescription: 'language feel it. Its a simple request, as well...'
+          },
+          {
+            sname: 'Symonds Andrew',
+            simage: 'assets/images/student3.jpg',
+            sclass: 'II Class',
+            sdescription: 'language feel it. Its a simple request, as well...'
+          },
+          {
+            sname: 'Symonds Andrew',
+            simage: 'assets/images/student3.jpg',
+            sclass: 'II Class',
+            sdescription: 'language feel it. Its a simple request, as well...'
           }
       ]
 

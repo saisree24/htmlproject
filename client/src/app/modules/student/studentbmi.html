@@ -1,22 +1,20 @@
-<div layout="row" class="student-list-wrap" layout-align="start start" flex="100">
-<div flex layout="row">
-<md-card ng-repeat="cardslist in cardslists" class="card-list" layout="column" layout-align="center center" flex="30">
-    <div class="md-padding" layout="column" layout-align="center center">
-        <img src="{{cardslist.simage}}" class="card-image" alt="Washed Out">
-        <p class="md-headline blue-text p-0 m-0" ng-bind="cardslist.sname"></p>
-    </div>
-    <md-card-content class="p-t-0">
-        <p ng-bind="cardslist.sdescription">
-            
-        </p>
-    </md-card-content>
-    <md-card-actions class="w100" layout="row" layout-align="space-between center">
-        <md-button class="md-icon-button md-primary" aria-label="Settings">
-            <md-icon class="material-icons blue-text">filter_list</md-icon>
-        </md-button>
-        <md-button class="md-icon-button md-primary" aria-label="Settings">
-                <md-icon class="material-icons blue-text">menu</md-icon>
-            </md-button>
-    </md-card-actions>
-</md-card>
+<div class="student-list-wrap md-padding" flex="100" ng-nicescroll>
+    <md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="2" md-cols-gt-md="3" md-row-height="250px" md-row-height-gt-md="320px"
+        md-gutter="25px" class="m-b-25">
+        <md-grid-tile ng-repeat="cardslist in cardslists" class="md-padding card-list white lms_box_shadow_1">
+            <div layout="column" class="p-20" layout-fill layout-align="center center">
+                <div style="background-image: url('{{cardslist.simage}}');" class="card-image"></div>
+                <h3 class="md-subhead blue-text m-b-5" ng-bind="cardslist.sname"></h3>
+                <span ng-bind="cardslist.sclass"></span>
+                <div class="w100 m-t-35" layout="row" layout-align="space-around center">
+                    <md-button class="md-raised md-primary md-button md-buttons addon-bg">
+                        Send a message
+                    </md-button>
+                    <md-button class="md-raised md-primary md-button md-buttons">
+                        view profile
+                    </md-button>
+                </div>
+            </div>
+        </md-grid-tile>
+    </md-grid-list>
 </div>
