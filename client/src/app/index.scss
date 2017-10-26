@@ -260,7 +260,7 @@ md-tabs {
       & .md-button{
         background: #1d4c9e !important;
         border-color:#23aaea;
-        & i{
+        & md-icon{
           color: #fff !important;
           font-size: 2.5em;
           margin-bottom: 10px;
@@ -277,7 +277,7 @@ md-tabs {
   & .md-list-item-text{
     padding: 25px 10px;
     text-transform: uppercase;
-    & i{
+    & md-icon{
       color: #94add6 !important;
       font-size: 2.5em;
       margin-bottom: 10px;

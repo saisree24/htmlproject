@@ -1,8 +1,14 @@
 <md-list layout-fill class="lms_left_menu" >
-  <md-list-item class="md-2-line lms_left_item" ng-cloak ng-repeat="item in menulist" ng-class="{active: item == 'activities'}" ng-click="null">
+  <md-list-item class="md-2-line lms_left_item active" ng-cloak  ng-click="$state.go('dashboard.studyplan')">
     <div class="md-list-item-text" layout="column" layout-align="center center">
-      <i class="lms-{{item}}"></i>
-      <p>{{item}}</p>
+      <md-icon>dashboard</md-icon>
+      <p>Dashboard</p>
+    </div>
+  </md-list-item>
+  <md-list-item class="md-2-line lms_left_item" ng-cloak  ng-click="null">
+    <div class="md-list-item-text" layout="column" layout-align="center center">
+      <md-icon>gradient</md-icon>
+      <p>Student Analytics</p>
     </div>
   </md-list-item>
 </md-list>

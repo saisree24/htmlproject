@@ -21,7 +21,7 @@
     return directive;
 
     /** @ngInject */
-    function SideNavController($scope,$timeout) {
+    function SideNavController($scope,$timeout,$state) {
       var vm = this;
       $timeout(function() {
         $('.lms_left_item').each(function(i){
