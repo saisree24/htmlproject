@@ -1,0 +1,94 @@
+.studentdata{
+    width: 300px;
+}
+.score-title{
+    font-family: cursive;
+    font-weight: 100;
+    font-size: 150%;
+    margin: 0;
+}
+.bmi-report{
+    margin-top: 20px;
+    font-size: 12em;
+    &.obese{
+        color: #e84c3d;
+    }
+    &.healthy{
+        color: #67ba2e;
+    }
+    &.overweight{
+        color: #ffe361;
+    }
+    &.underweight{
+        color: #4aa6e5;
+    }  
+}
+.bmi-score{
+    font-size: 4em;
+    position: relative;
+    top: 80px;
+    &:after{
+        content: "";
+        width: 2px;
+        height: 75px;
+        background: #000;
+        left: -45px;
+        top: -30px;
+        position: absolute;
+        -webkit-transform: rotate(7deg);
+        transform: rotate(-60deg);
+    }
+}
+.bmi-scale{
+    & .obese, .healthy, .overweight, .underweight{        
+        position: relative;
+    }
+    & .obese{
+        background: #e84c3d;
+        height:80px;
+        &:after{
+            content: "30.0 AND ABOVE";
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            color: #000;
+            right:20px;
+        }
+    }
+    & .healthy{
+        background: #67ba2e;
+        height:40px;
+        &:after{
+            content: "18.5 - 24.9";
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            color: #000;
+            right:20px;
+        }
+    }
+    & .overweight{
+        background: #ffe361;
+        height:60px;
+        &:after{
+            content: "25.0 - 29.9";
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            color: #000;
+            right:20px;
+        }
+    }
+    & .underweight{
+        background: #4aa6e5;
+        height:30px;
+        &:after{
+            content: "BELOW 18.5";
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            color: #000;
+            right:20px;
+        }  
+    }
+}

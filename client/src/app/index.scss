@@ -446,7 +446,15 @@ section.jumbotron {
     }
   }
 }
-
+.circle_radius{
+  border-radius: 50%;
+  border: 1px solid rgba(204, 204, 204, 0.59);
+  width: 180px;
+}
+.ad-btn {
+  border-radius: 30px;
+  padding: 0 10px;
+}
 .lms_box_shadow{
   box-shadow: 0px 0px 20px 13px rgba(176, 190, 197, 0.14);
   -webkit-box-shadow: 0px 0px 20px 13px rgba(176, 190, 197, 0.14);
@@ -460,7 +468,9 @@ section.jumbotron {
   -o-box-shadow: 0px 0px 10px 7px rgba(176, 190, 197, 0.14);
 }
 
-
+.school_logo{
+  width: 180px;
+}
 .main-ui-view{
   overflow: hidden;
   &.ng-enter {

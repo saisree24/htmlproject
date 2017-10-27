@@ -44,6 +44,12 @@
         templateUrl: 'app/modules/student/studentlist/studentlist.html',
         controller: 'StudentbmiController',
         controllerAs: 'studentlist'
+      })
+      .state('dashboard.studentview', {
+        url: '/studentview',
+        templateUrl: 'app/modules/student/studentview.html',
+        controller: 'StudentbmiController',
+        controllerAs: 'studentlist'
       });
 
     $urlRouterProvider.otherwise('/login');

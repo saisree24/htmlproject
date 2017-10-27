@@ -1,0 +1,121 @@
+<div class="p-50" ng-nicescroll>
+        <md-card class="p-25 m-0">
+            <div layout="row">
+                <div class="studentdata" layout="column" layout-align="center center">
+                    <img src="assets/images/male.png" alt="" class="circle_radius" width="50">
+                    <div layout="row" class="m-t-15">
+                        <md-button class="md-raised md-primary md-button md-buttons addon-bg ad-btn">
+                            Send a message
+                        </md-button>
+                        <md-button class="md-raised md-primary md-button md-buttons ad-btn">
+                            view profile
+                        </md-button>
+                    </div>
+                </div>
+                <div flex layout="column" class="m-l-45">
+                     <div layout="row" class="m-b-15">
+                         <div layout="column">
+                             <span class="md-title black-text">Student Name</span>
+                             <span class="md-body-1">VI Class</span> 
+                        </div>
+                        <span flex></span>
+                        <div class="school_logo"><img src="assets/images/logo.png" alt="Next School" width="80%"></div>
+                        
+                     </div>
+                     
+                     <span class="m-b-5">Age : <span class="addon-color md-subhead">28</span></span>  
+                     <span class="m-b-5">Blood Group : <span class="addon-color md-subhead">B+</span></span>
+                     <span class="m-b-5">School : <span class="addon-color md-subhead">Next Education School</span></span>  
+                     
+                     <div layout="row" layout-align="start center" class="border-top p-t-25 m-t-15">
+                         <div layout="column">
+                                <span class="m-b-10 md-caption">BMI</span>
+                                <span class="md-display-1 primary-color">0.56</span>
+                         </div>
+                         <div layout="column" class="m-l-45">
+                                <span class="m-b-10 md-caption">Waist-Height-Ratio</span>
+                                <span class="md-display-1 primary-color">0.25</span>
+                         </div>
+                         <div layout="column" class="m-l-45">
+                                <span class="m-b-10 md-caption">Health Issues</span>
+                                <span class="md-display-1 primary-color">30</span>
+                         </div>
+                         <div layout="column" class="m-l-45">
+                                <span class="m-b-10 md-caption">Tips Suggested</span>
+                                <span class="md-display-1 primary-color">30</span>
+                         </div>
+                        
+
+                     </div>
+                </div>
+            </div>
+        </md-card>
+
+        <div class="m-t-45"></div>
+
+        <h3 class="md-headline">Health Analysis Report</h3>
+
+        <md-card class="p-25 m-0">
+            <h3 class="score-title">BMI SCORE</h3>
+            <div layout="row" layout-align="space-between center">
+                <div flex="50">
+                    <md-icon class="bmi-report healthy">favorite</md-icon>
+                    <span class="bmi-score">0.25</span>
+                    <hr class="m-t-15 m-b-15" />
+                    <p class="md-title">See how many points student scored in set of questions related to your BMI Analysis.</p>
+                    
+                    <h4 class="md-heading">Keep Your health Fit...</h4>
+                    <ul class="md-title">
+                        <li>Jogging</li>
+                        <li>Aerobics or cycling class</li>
+                        <li>Playing singles tennis</li>
+                        <li>Heavy yard work, like shoveling</li>
+                    </ul>
+                </div>
+                <div flex-gt-md="40" flex-gt-sm="45" flex="50" class="bmi-scale border-top">
+                    <div layout="row" class="border-bottom" ng-repeat="item in ['obese','overweight','healthy','underweight']"> 
+                        <div flex class="m-t-5 text-uppercase">{{item}}</div>                        
+                        <div class="{{item}}" flex></div>
+                    </div>
+                    <hr class="m-t-35 m-b-15" />
+                    <h2>Health Action</h2>
+                    <p class="text-capitalize md-display-3 m-0">Take Action</p>
+                    <p class="md-title">See how many points student scored in set of questions related to your BMI Analysis.</p>
+                </div>
+            </div>           
+
+        </md-card>
+        <br/>
+        <md-card class="p-25 m-0">
+                <h3 class="score-title">Waist-height Report</h3>
+                <div layout="row" layout-align="space-between center">
+                    <div flex="50">
+                        <md-icon class="bmi-report healthy">favorite</md-icon>
+                        <span class="bmi-score">0.25</span>
+                        <hr class="m-t-15 m-b-15" />
+                        <p class="md-title">See how many points student scored in set of questions related to your BMI Analysis.</p>
+                        
+                        <h4 class="md-heading">Keep Your health Fit...</h4>
+                        <ul class="md-title">
+                            <li>Jogging</li>
+                            <li>Aerobics or cycling class</li>
+                            <li>Playing singles tennis</li>
+                            <li>Heavy yard work, like shoveling</li>
+                        </ul>
+                    </div>
+                    <div flex-gt-md="40" flex-gt-sm="45" flex="50" class="bmi-scale border-top">
+                        <div layout="row" class="border-bottom" ng-repeat="item in ['obese','overweight','healthy','underweight']"> 
+                            <div flex class="m-t-5 text-uppercase">{{item}}</div>                        
+                            <div class="{{item}}" flex></div>
+                        </div>
+                        <hr class="m-t-35 m-b-15" />
+                        <h2>Health Action</h2>
+                        <p class="text-capitalize md-display-3 m-0">Take Action</p>
+                        <p class="md-title">See how many points student scored in set of questions related to your BMI Analysis.</p>
+                    </div>
+                </div>           
+    
+            </md-card>
+
+          
+</div>
