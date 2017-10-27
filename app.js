@@ -9,11 +9,11 @@ var app = express();
 
 const route = require('./routes/route');
 
-// const domain_url = '192.168.33.168:27017';
+const domain_url = '13.126.121.9:27017';
 // const domain_url = 'http://192.168.33.168:3000';
-const domain_url = 'localhost:27017';
+//const domain_url = 'localhost:27017';
 
-const database_name = 'test';
+const database_name = 'local';
 
 const db_link = 'mongodb://'+ domain_url+'/'+database_name;
 
