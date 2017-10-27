@@ -98,7 +98,9 @@ html{
   cursor: pointer;
 }
 
-
+.capital{
+  text-transform: capitalize;
+}
 .relative{
   position: relative;
 }

@@ -1,6 +1,9 @@
-.lms_leftbar{
+.dash_leftbar{
   width: 350px;
-  background: #2a58ad;
+  // background: #2a58ad ;
+  background: #2a58ad url('../assets/images/side_nav_bg.jpg');
+  background-position: bottom;
+  background-repeat: no-repeat;
   & .profileDetails{
     height: 300px;
     width: 100%;

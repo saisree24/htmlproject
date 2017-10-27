@@ -10,19 +10,18 @@
         <p flex="30">Age </p>
         <p flex="30">Joined Date </p>
         <p flex="30">Blood Group </p>
-        <p flex="30">Status </p>
+        <p flex="30" class="p-l-30">Status </p>
         <p> Actions </p>
     </div>
     </md-list-item>
-
     <md-list-item class="md-2-line m-b-0 white" layout="row" ng-repeat="slist in slists">
     <div class="md-list-item-text p-10 list" layout="row" flex>
         <p flex="30" layout="row" layout-align="start center">{{slist.sfname}}</p>
         <p flex="30" layout="row" layout-align="start center">{{slist.sage}}</p>
         <p flex="30" layout="row" layout-align="start center">{{slist.sdob}}</p>
-        <p flex="30" layout="row" layout-align="start center">{{slist.sbGroup}} </p>
+        <p flex="30" class="capital" layout="row" layout-align="start center">{{slist.sbGroup}} </p>
         <p flex="30" layout="row" layout-align="start center">
-        <md-button class="md-button list-button">
+        <md-button class="md-button list-button m-0">
             <md-icon class="green-text material-icons list-icon m-0 p-0">brightness_1</md-icon>
             Active
         </md-button>
