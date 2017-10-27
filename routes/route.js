@@ -14,27 +14,40 @@ function intervalFunc() {
         res.json({msg:'Failed to add Health Tips', status: false});
     }else{
       tips = healthtips;
-    }
-  });
-  Students.find(function(err, response){
-      if(err){
-        res.json({msg: 'Something went Wrong'});
-      }else{
-        if(response){
-          for(var i = 0; i < response.length; i++){
-            for(var j = 0; j < tips.length; j++){
-              if(response[i].shSuggest[0] == tips[j].healthIssue){
-                  sendMail(response[i].user, tips[j].tips[0]);
+      Students.find(function(err, response){
+          if(err){
+            res.json({msg: 'Something went Wrong'});
+          }else{
+            if(response){
+              sendMail(response[0].semail, tips[0].tips[0]);
+              for(var i = 0; i < response.length; i++){
+                for(var j = 0; j < tips.length; j++){
+                  if(response[i].shSuggest[0] == tips[j].healthIssue){
+                      //sendMail(response[i].semail, tips[j].tips[0]);
+                      // response[i].shIssue = response[i].shIssue + 1;
+                      // Credentials.findOneAndUpdate({user:response[i].user, otp:response[i].otp}, response[i], function(err, response){
+                      //     if(err){
+                      //       console.log(err);
+                      //     }else{
+                      //       console.log(response);
+                      //     }
+                      // });
+                  }
+                }
               }
             }
           }
-        }
-      }
+      });
+    }
   });
+
 }
+
+intervalFunc();
 
 function sendMail(mailId, tip){
   sgMail.setApiKey('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');
+  console.log('mailId', mailId);
   const msg = {
       to: 'anandaraju.geddada@gmail.com',
       from: 'nexthealthcare@gmail.com',
@@ -105,6 +118,7 @@ router.post('/checkcredentials', (req,res,next)=>{
         }
     });
 });
+
 
 // check credentials
 router.post('/checkotp', (req,res,next)=>{
