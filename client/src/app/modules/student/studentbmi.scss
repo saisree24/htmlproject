@@ -1,43 +1,50 @@
-.student-list-wrap{
-    & .card-list{
-        & .card-image{
-            border-radius: 50%;
-            width:120px;
-            height:120px;            
-            background-size: 100% 100%;
-            background-position: center;
-        
-        }
-        & .md-buttons{
-            font-size: 12px;
-            padding: 0px 10px !important;
-            border-radius: 30px;
-        }
+.student-list-wrap {
+    & .card-list {
+      & .card-image {
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        background-size: 100% 100%;
+        background-position: center;
+      }
+      & .md-buttons {
+        font-size: 12px;
+        padding: 0px 10px !important;
+        border-radius: 30px;
+      }
     }
-}
-
-.student-list {
-    & .header{
-    & p {
+  }
+  
+  .student-list {
+    & .header {
+      & p {
         color: #000 !important;
         font-size: 16px !important;
         font-weight: bold;
+      }
     }
+    & .list {
+      & p {
+        color: rgb(0, 0, 0) !important;
+      }
     }
-  & .list-icon{
-    font-size: 15px;
-}
-
-& .list-button{
-    border-radius: 30px;
-    font-size: 12px;
-    margin: 0 -3 0 0px !important;
-    line-height: 20px !important;
-    height: 20px !important;
-    padding: 0px 15px !important;
-    border: solid 1px $accentcolor; 
-}
-& .d-border{
-    border-top:solid #cfd8dc 1px;
-}
-}
+    & .list-icon {
+      font-size: 15px;
+    }
+    & .list-button {
+      border-radius: 30px;
+      font-size: 12px;
+      margin: 0 -3 0 0px !important;
+      line-height: 20px !important;
+      height: 20px !important;
+      padding: 0px 15px !important;
+      border: solid 1px $accentcolor;
+    }
+    & .d-border {
+      border-top: solid #cfd8dc 1px;
+    }
+    & .ad-btn {
+      border-radius: 30px;
+      padding: 1px 15px;
+    }
+  }

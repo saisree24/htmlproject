@@ -44,32 +44,32 @@
 
       $scope.slists = [
         {
-          name: 'Adom Andrews',
-          age: '15Years',
+          name: 'Sai Sreekanth',
+          age: '27 Years',
           date: '27-Oct-17',
           bgroup: ' B+'
         },
         {
-          name: 'Adom Andrews',
-          age: '15Years',
+          name: 'B Madhusudan',
+          age: '28 Years',
+          date: '27-Oct-17',
+          bgroup: ' O+'
+        },
+        {
+          name: 'Anandaraj',
+          age: '27 Years',
+          date: '27-Oct-17',
+          bgroup: ' A+'
+        },
+        {
+          name: 'P Venkat',
+          age: '18 Years',
           date: '27-Oct-17',
           bgroup: ' B+'
         },
         {
-          name: 'Adom Andrews',
-          age: '15Years',
-          date: '27-Oct-17',
-          bgroup: ' B+'
-        },
-        {
-          name: 'Adom Andrews',
-          age: '15Years',
-          date: '27-Oct-17',
-          bgroup: ' B+'
-        },
-        {
-          name: 'Adom Andrews',
-          age: '15Years',
+          name: 'Kiran (Arjun Reddy)',
+          age: '17 Years',
           date: '27-Oct-17',
           bgroup: ' B+'
         }
