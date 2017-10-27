@@ -18,7 +18,44 @@
         }
       });
     }
-    $scope.waistlist = ['Abnormally Slim','Extremely slim','Slender and Healthy','Healthy, Normal, Attractive Weight','High weight','Extremely Overweight/Obese','Highly Obese'];
+    $scope.waistlist =
+    [ 
+      { 
+        "type" : 'Abnormally Slim',
+        "male" : "Below 35",
+        "female" : "Below 35"
+      },
+      { 
+        "type" : 'Extremely slim',
+        "male" : "35 to 43",
+        "female" : "35 to 42"
+      },
+      { 
+        "type" : 'Slender and Healthy',
+        "male" : "43 to 46",
+        "female" : "42 to 46"
+      },
+      { 
+        "type" : 'Healthy, Normal, Attractive Weight',
+        "male" : "46 and 53",
+        "female" : "46 and 49"
+      },
+      { 
+        "type" : 'High weight',
+        "male" : "53 to 58",
+        "female" : "49 to 54"
+      },
+      { 
+        "type" : 'Extremely Overweight/Obese',
+        "male" : "58 to 63",
+        "female" : "54 to 58"
+      },
+      { 
+        "type" : 'Highly Obese',
+        "male" : "Above 63",
+        "female" : "Above 58"
+      }
+    ];
     $scope.bmilist = ['obese','overweight','healthy','underweight'];
     $scope.init();
     $scope.bmireport = function(height,weight){
@@ -40,10 +77,10 @@
       if(val > 30){
         bmiclass = "obese";
       }
-      else if(val > 25 && val < 29.9){
+      else if(val > 25 && val < 29.99){
         bmiclass = "overweight";
       }
-      else if(val > 18.5 && val < 24.9){
+      else if(val > 18.5 && val < 24.99){
         bmiclass = "healthy";
       }
       else if(val < 18.5){

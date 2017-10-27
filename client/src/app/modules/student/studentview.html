@@ -4,11 +4,8 @@
                 <div class="studentdata" layout="column" layout-align="center center">
                     <img src="assets/images/male.png" alt="" class="circle_radius" width="50">
                     <div layout="row" class="m-t-15">
-                        <md-button class="md-raised md-primary md-button md-buttons addon-bg ad-btn">
-                            Send a message
-                        </md-button>
                         <md-button class="md-raised md-primary md-button md-buttons ad-btn">
-                            view profile
+                            Edit profile
                         </md-button>
                     </div>
                 </div>
@@ -61,7 +58,8 @@
         <md-card class="p-25 m-0">
             <h3 class="score-title">BMI SCORE</h3>
             <div layout="row" layout-align="space-between center">
-                <div flex="50">                        
+                <div flex="50">        
+      
                     <md-icon class="bmi-report  animated pulse infinite" ng-class="bmiclass(bmireport(student.sheight,student.sweight))">favorite</md-icon>
                     <span class="bmi-score">{{bmireport(student.sheight,student.sweight)}}</span>
                     <p class="md-title">See how many points student scored in set of questions related to your BMI Analysis.</p>
@@ -99,10 +97,10 @@
 
                         <h4 class="md-heading">Keep Your health Fit...</h4>
                         <ul class="md-subhead">
-                            <li>Jogging</li>
-                            <li>Aerobics or cycling class</li>
-                            <li>Playing singles tennis</li>
-                            <li>Heavy yard work, like shoveling</li>
+                            <li>High fiber foods</li>
+                            <li>Wild-caught fish </li>
+                            <li>Avoid getting too hungry that can cause you to overeat later, eat about every 4 hours</li>
+                            <li>People who eat at least 3-4 ounces of protein per meal tend to feel more satisfied and eat less overall.</li>
                         </ul>
                     </div>
                     <div flex-gt-md="45" flex-gt-sm="45" flex="50" class="bmi-scale border-top">
