@@ -26,7 +26,12 @@
         controller: 'DashboardController',
         controllerAs: 'dashboard'
       })
-
+      .state('dashboard.addstudent', {
+        url: '/addstudent',
+        templateUrl: 'app/modules/student/addstudent.html',
+        controller: 'StudentController',
+        controllerAs: 'student'
+      })
       .state('dashboard.student', {
         url: '/student',
         templateUrl: 'app/modules/student/studentbmi.html',
@@ -40,7 +45,6 @@
         controller: 'StudentbmiController',
         controllerAs: 'studentlist'
       });
-
 
     $urlRouterProvider.otherwise('/login');
   }
