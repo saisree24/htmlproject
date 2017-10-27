@@ -32,12 +32,7 @@
             <md-icon md-menu-origin class="material-icons">more_horiz</md-icon>
             </md-button>
             <md-menu-content width="2" layout="column" layout-align="space-between center">
-            <md-menu-item class="width100">
-                <md-button class="md-mini" ng-click="viewStudent(slist.user)">
-                <md-icon class="material-icons list-icon">remove_red_eye</md-icon>
-                View
-                </md-button>
-            </md-menu-item>
+
             <md-menu-item class="width100">
                 <md-button class="md-mini" ng-click="editStudent(slist.user)">
                 <md-icon class="material-icons list-icon">edit</md-icon>
@@ -48,6 +43,12 @@
                 <md-button class="md-mini" ng-click="deleteStudent(slist.user)">
                 <md-icon class="material-icons list-icon">delete</md-icon>
                 Delete
+                </md-button>
+            </md-menu-item>
+            <md-menu-item class="width100">
+                <md-button class="md-mini" ng-click="viewStudent(slist.user)">
+                <md-icon class="material-icons list-icon">remove_red_eye</md-icon>
+                View
                 </md-button>
             </md-menu-item>
 
