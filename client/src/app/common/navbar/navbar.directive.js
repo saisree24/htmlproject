@@ -3,7 +3,7 @@
 
   angular
     .module('nextHealthCare')
-    .directive('lmsNavbar', lmsNavbar)
+    .directive('mainNavbar', mainNavbar)
 
     .directive('backButton', ['$window', function($window) {
         return {
@@ -17,7 +17,7 @@
     }]);
 
   /** @ngInject */
-  function lmsNavbar() {
+  function mainNavbar() {
     var directive = {
       restrict: 'E',
       templateUrl: 'app/common/navbar/navbar.html',
