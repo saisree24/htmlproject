@@ -46,14 +46,29 @@ function intervalFunc() {
 intervalFunc();
 
 function sendMail(mailId, tip){
-  sgMail.setApiKey('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');
+  //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
+  //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
+  sgMail.setApiKey('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');
   console.log('mailId', mailId);
   const msg = {
-      to: 'anandaraju.geddada@gmail.com',
+      to: 'anandaraju520@gmail.com',
       from: 'nexthealthcare@gmail.com',
       subject: 'Next Health Care Tips',
       text: tip,
-      html: '<strong>'+ tip +'</strong>'
+      html:  "<body style='font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;'>\
+            <table cell-spacing='0' cell-padding='0' background='http://webappsdeveloper.net/body-bg.jpg' style='width:768px; height:576px;' align='center' valign='top' border='0'>\
+            <tr>\
+              <td width='20'></td>\
+              <td valign='center' cell-spacing='0' cell-padding='0'>\
+               <h1 style='font-size:24px; line-height:26px;'>Health Issue: Fever</h1>\
+               <h3 style='margin:0; font-size:18px; line-height:24px;'>Suggestion:-</h3>\
+               <p style='margin:0; font-size:16px; line-height:24px;'>"+ tip + "</p>\
+               </td>\
+               <td width='280'></td>\
+            </tr>\
+            </tr>\
+          </table>\
+        </body>"
   };
   sgMail.send(msg);
 }
