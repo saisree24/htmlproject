@@ -29,7 +29,7 @@
       }
     }
     & .list-icon {
-      font-size: 15px;
+      font-size: 14px !important;
     }
     & .list-button {
       border-radius: 30px;
@@ -43,4 +43,8 @@
     & .d-border {
       border-top: solid #cfd8dc 1px;
     }
+  }
+
+  .list-icon {
+    font-size: 18px !important;
   }
