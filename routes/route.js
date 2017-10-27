@@ -43,7 +43,7 @@ function intervalFunc() {
 
 }
 
-intervalFunc();
+//intervalFunc();
 
 function sendMail(mailId, tip){
   //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
