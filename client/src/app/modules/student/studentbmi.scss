@@ -37,8 +37,12 @@
       margin: 0 -3 0 0px !important;
       line-height: 20px !important;
       height: 20px !important;
-      padding: 0px 15px !important;
+      padding: 0px 10px !important;
       border: solid 1px $accentcolor;
+      & .list-icon {
+        font-size: 14px !important;
+        margin: -2px 5px 0px 0px !important;
+      }
     }
     & .d-border {
       border-top: solid #cfd8dc 1px;
