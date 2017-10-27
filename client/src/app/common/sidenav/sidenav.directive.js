@@ -31,7 +31,11 @@
               }, 150*i);
         });
       }, 5);
-
+      $scope.currentState = 'dashboard.home';
+      $scope.changeRoute = function(route){
+        $scope.currentState = route;
+        $state.go(route);
+      }
       $scope.menulist = ['activities','assessment','experiment','lab','mind-maps','notes','online-tutoring','tlm','slm'];
     }
   }

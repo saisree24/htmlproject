@@ -32,23 +32,29 @@
         controller: 'StudentController',
         controllerAs: 'student'
       })
+      .state('dashboard.editstudent', {
+        url: '/editStudent/:student',
+        templateUrl: 'app/modules/student/addstudent.html',
+        controller: 'EditStudentController',
+        controllerAs: 'editStudent'
+      })
       .state('dashboard.student', {
         url: '/student',
         templateUrl: 'app/modules/student/studentbmi.html',
         controller: 'StudentbmiController',
         controllerAs: 'studentbmi'
       })
-      
+
       .state('dashboard.studentlist', {
         url: '/studentlist',
         templateUrl: 'app/modules/student/studentlist/studentlist.html',
-        controller: 'StudentbmiController',
+        controller: 'StudentListController',
         controllerAs: 'studentlist'
       })
       .state('dashboard.studentview', {
-        url: '/studentview',
+        url: '/studentview/:student',
         templateUrl: 'app/modules/student/studentview.html',
-        controller: 'StudentbmiController',
+        controller: 'ViewStudentController',
         controllerAs: 'studentlist'
       });
 

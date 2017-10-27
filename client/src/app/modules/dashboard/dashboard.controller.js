@@ -5,13 +5,58 @@
     .controller('DashboardController', DashboardController);
 
   /** @ngInject */
-  function DashboardController($scope,$timeout,$mdMedia,$state) {
+  function DashboardController($scope, $state, dataService, baseurls) {
 
-    $scope.pageTitle = 'Page Name';
-    $scope.isOpen = false;
-    $scope.$mdMedia = $mdMedia;
-    $scope.timeoutinc = 150;
-    $scope.studentlist = ['1','2','3'];
+    $scope.init = function(){
+      $scope.getGraphDetails();
+      $scope.getStudentDetails();
+    };
+
+    $scope.getGraphDetails = function(){
+      var url = baseurls.url + "getDashboardDetails";
+      var data = {};
+      dataService.getDetails(url, data).then(function(response){
+        if(response){
+          $scope.generateGraph(response);
+        }else{
+          console.log('no data found...!');
+        }
+      });
+    }
+    $scope.generateGraph = function(response){
+      var graphData = [];
+      var graphLabels = [];
+      $scope.data = [];
+      angular.forEach(response, function(data){
+          if(data.month){
+            graphLabels.push(data.month);
+          }
+          if(data.students){
+            graphData.push(data.students);
+          }
+      });
+      $scope.labels = graphLabels;
+      $scope.series = ['Series A', 'Series B'];
+      $scope.data.push(graphData);
+    }
+
+    $scope.getStudentDetails = function(){
+      var url = baseurls.url + "getStudentDetails";
+      var data = {};
+      dataService.getDetails(url, data).then(function(response){
+        if(response){
+          $scope.studentlist = response;
+        }else{
+          console.log('no data found...!');
+        }
+      });
+    }
+
+    $scope.init();
+
+
+
+    //$scope.studentlist = ['1','2','3'];
     $scope.pageview = 'app/view/studentlist.html';
 
     $scope.value = 65;
@@ -36,15 +81,7 @@
       //other options
     };
 
-    $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-    $scope.series = ['Series A', 'Series B'];
-    $scope.data = [
-      [65, 59, 80, 81, 56, 55, 40],
-      [28, 48, 40, 19, 86, 27, 90]
-    ];
-    $scope.onClick = function (points, evt) {
-      console.log(points, evt);
-    };
+
     $scope.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
     $scope.healthgraph = {
       scales: {
@@ -65,6 +102,9 @@
       }
     };
 
-    
+    $scope.viewStudent = function(student){
+      $state.go('dashboard.studentview', {student: student})
+    }
+
   }
 })();

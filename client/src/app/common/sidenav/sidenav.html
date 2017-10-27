@@ -1,38 +1,14 @@
 <md-list layout-fill class="lms_left_menu" >
-  <md-list-item class="md-2-line lms_left_item active" ng-cloak  ng-click="$state.go('dashboard.studyplan')">
+  <md-list-item class="md-2-line lms_left_item" ng-class="{'active': currentState == 'dashboard.home'}" ng-cloak ng-click="changeRoute('dashboard.home')">
     <div class="md-list-item-text" layout="column" layout-align="center center">
       <md-icon>dashboard</md-icon>
       <p>Dashboard</p>
     </div>
   </md-list-item>
-  <md-list-item class="md-2-line lms_left_item" ng-cloak  ng-click="null">
-    <div class="md-list-item-text" layout="column" layout-align="center center">
-      <md-icon>gradient</md-icon>
-      <p>Student Analytics</p>
-    </div>
-  </md-list-item>
-  <md-list-item class="md-2-line lms_left_item " ng-cloak  ng-click="$state.go('dashboard.studyplan')">
+  <md-list-item class="md-2-line lms_left_item" ng-cloak ng-class="{'active': currentState == 'dashboard.studentlist'}" ng-click="changeRoute('dashboard.studentlist')">
       <div class="md-list-item-text" layout="column" layout-align="center center">
-        <md-icon>dashboard</md-icon>
-        <p>Dashboard</p>
+        <md-icon>list</md-icon>
+        <p>Student List</p>
       </div>
     </md-list-item>
-    <md-list-item class="md-2-line lms_left_item" ng-cloak  ng-click="null">
-      <div class="md-list-item-text" layout="column" layout-align="center center">
-        <md-icon>gradient</md-icon>
-        <p>Student Analytics</p>
-      </div>
-    </md-list-item>
-    <md-list-item class="md-2-line lms_left_item " ng-cloak  ng-click="$state.go('dashboard.studyplan')">
-        <div class="md-list-item-text" layout="column" layout-align="center center">
-          <md-icon>dashboard</md-icon>
-          <p>Dashboard</p>
-        </div>
-      </md-list-item>
-      <md-list-item class="md-2-line lms_left_item" ng-cloak  ng-click="null">
-        <div class="md-list-item-text" layout="column" layout-align="center center">
-          <md-icon>gradient</md-icon>
-          <p>Student Analytics</p>
-        </div>
-      </md-list-item>
 </md-list>

@@ -8,16 +8,16 @@
 
 
         <md-grid-tile class="white lms_box_shadow_1">
-            <div layout="column" class="p-20" layout-fill layout-align="center center"> 
+            <div layout="column" class="p-20" layout-fill layout-align="center center">
                 <h3 class="md-subhead m-b-25">Profile Completeness</h3>
                 <div flex>
                     <ui-knob value="value" options="options"></ui-knob>
-                </div>                
+                </div>
             </div>
         </md-grid-tile>
 
         <md-grid-tile class="white lms_box_shadow_1">
-            <div layout="column" class="p-40" layout-align="center center" layout-fill> 
+            <div layout="column" class="p-40" layout-align="center center" layout-fill>
                 <div class="md-subhead">Profile Views</div>
                 <div flex layout="column" layout-align="center center" class="width100">
                     <span class="md-display-3 primary-color" flex layout-align="center center" layout="column"><span>250</span></span>
@@ -25,20 +25,20 @@
                         <div>by School<br/><span class="md-headline accent-color">130</span></div>
                         <div>by others<br/><span class="md-headline addon-color">650</span></div>
                     </div>
-                </div>                        
+                </div>
             </div>
         </md-grid-tile>
 
         <md-grid-tile class="white lms_box_shadow_1">
-            <div layout="column" class="p-40" layout-align="center center" layout-fill> 
+            <div layout="column" class="p-40" layout-align="center center" layout-fill>
                 <div class="md-subhead">Health Graph</div>
                 <div flex layout="column" layout-align="center center" class="width100">
                         <canvas id="line" class="chart chart-line" chart-data="data"
                         chart-labels="labels" chart-series="series" chart-options="healthgraph"
                         chart-dataset-override="datasetOverride" chart-click="onClick">
                         </canvas>
-                </div>                        
-            </div> 
+                </div>
+            </div>
         </md-grid-tile>
 
 
@@ -46,15 +46,15 @@
 
 
     <h1 class="md-headline black-text">Health Score</h1>
-    
+
         <md-grid-list
                 md-cols-xs="1" md-cols-sm="2" md-cols-md="2" md-cols-gt-md="3"
                 md-row-height="250px" md-row-height-gt-md="320px"
                 md-gutter="25px"  class="m-b-25">
-    
-    
+
+
             <md-grid-tile class="white lms_box_shadow_1">
-                <div layout="column" class="p-40" layout-align="center center" layout-fill> 
+                <div layout="column" class="p-40" layout-align="center center" layout-fill>
                     <div class="md-subhead">BMI Result</div>
                     <div flex layout="column" layout-align="center center" class="width100">
                         <span class="md-display-3 primary-color" flex layout-align="center center" layout="column"><span>250</span></span>
@@ -62,12 +62,12 @@
                             <div>Current BMI<br/><span class="md-headline accent-color">130</span></div>
                             <div>Previous BMI<br/><span class="md-headline addon-color">650</span></div>
                         </div>
-                    </div>                        
+                    </div>
                 </div>
             </md-grid-tile>
-    
+
             <md-grid-tile class="white lms_box_shadow_1">
-                <div layout="column" class="p-40" layout-align="center center" layout-fill> 
+                <div layout="column" class="p-40" layout-align="center center" layout-fill>
                     <div class="md-subhead">HEALTHY Result</div>
                     <div flex layout="column" layout-align="center center" class="width100">
                         <span class="md-display-3 primary-color" flex layout-align="center center" layout="column"><span>3.5</span></span>
@@ -75,12 +75,12 @@
                             <div>current result<br/><span class="md-headline accent-color">30.0</span></div>
                             <div>Previous result<br/><span class="md-headline addon-color">18.5 - 24.9</span></div>
                         </div>
-                    </div>                        
-                </div>   
+                    </div>
+                </div>
             </md-grid-tile>
-    
+
             <md-grid-tile class="white lms_box_shadow_1">
-                <div layout="column" class="p-40" layout-align="center center" layout-fill> 
+                <div layout="column" class="p-40" layout-align="center center" layout-fill>
                     <div class="md-subhead">OBESE Result</div>
                     <div flex layout="column" layout-align="center center" class="width100">
                         <span class="md-display-3 primary-color" flex layout-align="center center" layout="column"><span>27.4</span></span>
@@ -88,15 +88,15 @@
                             <div>current result<br/><span class="md-headline accent-color">28.2</span></div>
                             <div>Previous result<br/><span class="md-headline addon-color">26.5</span></div>
                         </div>
-                    </div>                        
+                    </div>
                 </div>
             </md-grid-tile>
-    
-    
+
+
         </md-grid-list>
 
     <h1 class="md-headline black-text">Student With Over BMI</h1>
-        
+
     <div flex  ng-include="pageview"></div>
 
 </div>

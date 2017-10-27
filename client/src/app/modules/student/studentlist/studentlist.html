@@ -1,7 +1,7 @@
 <div class="p-l-50 p-r-50 p-t-20 student-list " ng-nicescroll>
         <div layout="row" layout-align="space-between center">
             <h1 class="md-headline black-text">Student List</h1>
-            <md-button class="md-button md-raised addon-bg white-text ad-btn">Add a New Student </md-button>
+            <md-button class="md-button md-raised addon-bg white-text ad-btn" ng-click="addStudent()">Add a New Student</md-button>
         </div>
         <md-list class="height100">
             <md-list-item class="md-2-line m-b-0 blue-grey lighten-4" layout="row">
@@ -14,13 +14,13 @@
                 <p> Actions </p>
             </div>
             </md-list-item>
-    
+
             <md-list-item class="md-2-line m-b-0 white" layout="row" ng-repeat="slist in slists">
             <div class="md-list-item-text p-15 list" layout="row" flex>
-                <p flex="30" layout="row" layout-align="start center">{{slist.name}}</p>
-                <p flex="30" layout="row" layout-align="start center">{{slist.age}}</p>
-                <p flex="30" layout="row" layout-align="start center">{{slist.date}}</p>
-                <p flex="30" layout="row" layout-align="start center">{{slist.bgroup}} </p>
+                <p flex="30" layout="row" layout-align="start center">{{slist.sfname}}</p>
+                <p flex="30" layout="row" layout-align="start center">{{slist.sage}}</p>
+                <p flex="30" layout="row" layout-align="start center">{{slist.sdob}}</p>
+                <p flex="30" layout="row" layout-align="start center">{{slist.sbGroup}} </p>
                 <p flex="30" layout="row" layout-align="start center">
                 <md-button class="md-button list-button">
                     <md-icon class="green-text material-icons list-icon m-0 p-0">brightness_1</md-icon>
@@ -32,23 +32,26 @@
                     <md-icon md-menu-origin class="material-icons">more_horiz</md-icon>
                 </md-button>
                 <md-menu-content width="2">
-                    <md-menu-item ng-repeat="list in lists">
-                    <md-button class="md-mini" ng-click="ctrl.redial($event)">
-                        <md-icon class="green-text list-icon" md-menu-align-target>{{list.icon}}</md-icon>
-                        {{list.name}}
+                    <md-button class="md-mini" ng-click="viewStudent(slist.user)">
+                      View
                     </md-button>
-                    </md-menu-item>
+                    <md-button class="md-mini" ng-click="editStudent(slist.user)">
+                      Edit
+                    </md-button>
+                    <md-button class="md-mini" ng-click="deleteStudent(slist.user)">
+                        Delete
+                    </md-button>
+
                 </md-menu-content>
                 </md-menu>
-    
+
             </div>
-    
+
             <md-divider class="d-border"></md-divider>
-    
+
             </md-list-item>
-    
-    
+
+
         </md-list>
-    
+
         </div>
-    

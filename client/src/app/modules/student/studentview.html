@@ -15,18 +15,18 @@
                 <div flex layout="column" class="m-l-45">
                      <div layout="row" class="m-b-15">
                          <div layout="column">
-                             <span class="md-title black-text">Student Name</span>
-                             <span class="md-body-1">VI Class</span> 
+                             <span class="md-title black-text">{{student.sfname + ' ' + student.slname}}</span>
+                             <span class="md-body-1">VI Class</span>
                         </div>
                         <span flex></span>
                         <div class="school_logo"><img src="assets/images/logo.png" alt="Next School" width="80%"></div>
-                        
+
                      </div>
-                     
-                     <span class="m-b-5">Age : <span class="addon-color md-subhead">28</span></span>  
-                     <span class="m-b-5">Blood Group : <span class="addon-color md-subhead">B+</span></span>
-                     <span class="m-b-5">School : <span class="addon-color md-subhead">Next Education School</span></span>  
-                     
+
+                     <span class="m-b-5">Age : <span class="addon-color md-subhead">{{student.sage}}</span></span>
+                     <span class="m-b-5">Blood Group : <span class="addon-color md-subhead">{{student.sbGroup}}</span></span>
+                     <span class="m-b-5">School : <span class="addon-color md-subhead">Next Education School</span></span>
+
                      <div layout="row" layout-align="start center" class="border-top p-t-25 m-t-15">
                          <div layout="column">
                                 <span class="m-b-10 md-caption">BMI</span>
@@ -44,7 +44,7 @@
                                 <span class="m-b-10 md-caption">Tips Suggested</span>
                                 <span class="md-display-1 primary-color">30</span>
                          </div>
-                        
+
 
                      </div>
                 </div>
@@ -63,7 +63,7 @@
                     <span class="bmi-score">0.25</span>
                     <hr class="m-t-15 m-b-15" />
                     <p class="md-title">See how many points student scored in set of questions related to your BMI Analysis.</p>
-                    
+
                     <h4 class="md-heading">Keep Your health Fit...</h4>
                     <ul class="md-title">
                         <li>Jogging</li>
@@ -73,8 +73,8 @@
                     </ul>
                 </div>
                 <div flex-gt-md="40" flex-gt-sm="45" flex="50" class="bmi-scale border-top">
-                    <div layout="row" class="border-bottom" ng-repeat="item in ['obese','overweight','healthy','underweight']"> 
-                        <div flex class="m-t-5 text-uppercase">{{item}}</div>                        
+                    <div layout="row" class="border-bottom" ng-repeat="item in ['obese','overweight','healthy','underweight']">
+                        <div flex class="m-t-5 text-uppercase">{{item}}</div>
                         <div class="{{item}}" flex></div>
                     </div>
                     <hr class="m-t-35 m-b-15" />
@@ -82,7 +82,7 @@
                     <p class="text-capitalize md-display-3 m-0">Take Action</p>
                     <p class="md-title">See how many points student scored in set of questions related to your BMI Analysis.</p>
                 </div>
-            </div>           
+            </div>
 
         </md-card>
         <br/>
@@ -94,7 +94,7 @@
                         <span class="bmi-score">0.25</span>
                         <hr class="m-t-15 m-b-15" />
                         <p class="md-title">See how many points student scored in set of questions related to your BMI Analysis.</p>
-                        
+
                         <h4 class="md-heading">Keep Your health Fit...</h4>
                         <ul class="md-title">
                             <li>Jogging</li>
@@ -104,8 +104,8 @@
                         </ul>
                     </div>
                     <div flex-gt-md="40" flex-gt-sm="45" flex="50" class="bmi-scale border-top">
-                        <div layout="row" class="border-bottom" ng-repeat="item in ['obese','overweight','healthy','underweight']"> 
-                            <div flex class="m-t-5 text-uppercase">{{item}}</div>                        
+                        <div layout="row" class="border-bottom" ng-repeat="item in ['obese','overweight','healthy','underweight']">
+                            <div flex class="m-t-5 text-uppercase">{{item}}</div>
                             <div class="{{item}}" flex></div>
                         </div>
                         <hr class="m-t-35 m-b-15" />
@@ -113,9 +113,9 @@
                         <p class="text-capitalize md-display-3 m-0">Take Action</p>
                         <p class="md-title">See how many points student scored in set of questions related to your BMI Analysis.</p>
                     </div>
-                </div>           
-    
+                </div>
+
             </md-card>
 
-          
+
 </div>
