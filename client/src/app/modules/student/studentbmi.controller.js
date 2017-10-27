@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-  
+
     angular.module('nextHealthCare')
       .controller('StudentbmiController', StudentbmiController)
       .filter('spaceless',function() {
@@ -8,16 +8,15 @@
             if (input) {
               var text = input.replace(/,/g, '');
               var slash = text.replace(/\//g, '-');
-                return slash.replace(/\s+/g, '-');    
+                return slash.replace(/\s+/g, '-');
             }
         }
     });
-  
+
     /** @ngInject */
     function StudentbmiController($scope) {
-  
+      $(['ng-nicescroll']).getNiceScroll().resize();
       $scope.pageTitle = 'Student List';
-
       $scope.cardslists = [
           {
               sname: 'Symonds Andrew',
@@ -50,7 +49,6 @@
             sdescription: 'language feel it. Its a simple request, as well...'
           }
       ];
-
       $scope.slists = [
         {
           name: 'Sai Sreekanth',
@@ -97,9 +95,6 @@
           icon: 'delete',
           name: 'Delete'
         }
-        
       ];
-      
     }
   })();
-  

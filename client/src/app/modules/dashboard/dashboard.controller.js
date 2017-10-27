@@ -6,10 +6,11 @@
 
   /** @ngInject */
   function DashboardController($scope, $state, dataService, baseurls) {
-
+    // init controller
     $scope.init = function(){
       $scope.getGraphDetails();
       $scope.getStudentDetails();
+      $(['ng-nicescroll']).getNiceScroll().resize();
     };
 
     $scope.getGraphDetails = function(){
@@ -18,25 +19,27 @@
       dataService.getDetails(url, data).then(function(response){
         if(response){
           $scope.generateGraph(response);
-        }else{
-          console.log('no data found...!');
         }
       });
     }
     $scope.generateGraph = function(response){
-      var graphData = [];
-      var graphLabels = [];
+      var graphData = [
+          20, 30, 50, 60, 30
+      ];
+      var graphLabels = [
+        'Jan', 'Feb', 'March', 'April', 'May'
+      ];
       $scope.data = [];
-      angular.forEach(response, function(data){
-          if(data.month){
-            graphLabels.push(data.month);
-          }
-          if(data.students){
-            graphData.push(data.students);
-          }
-      });
+      // angular.forEach(response, function(data){
+      //     if(data.month){
+      //       graphLabels.push(data.month);
+      //     }
+      //     if(data.students){
+      //       graphData.push(data.students);
+      //     }
+      // });
       $scope.labels = graphLabels;
-      $scope.series = ['Series A', 'Series B'];
+      $scope.series = ['Health Report'];
       $scope.data.push(graphData);
     }
 
@@ -46,19 +49,13 @@
       dataService.getDetails(url, data).then(function(response){
         if(response){
           $scope.studentlist = response;
-        }else{
-          console.log('no data found...!');
         }
       });
     }
 
     $scope.init();
 
-
-
-    //$scope.studentlist = ['1','2','3'];
     $scope.pageview = 'app/view/studentlist.html';
-
     $scope.value = 65;
     $scope.options = {
       displayPrevious: true,
@@ -81,7 +78,6 @@
       //other options
     };
 
-
     $scope.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
     $scope.healthgraph = {
       scales: {
@@ -101,10 +97,8 @@
         ]
       }
     };
-
     $scope.viewStudent = function(student){
       $state.go('dashboard.studentview', {student: student})
     }
-
   }
 })();

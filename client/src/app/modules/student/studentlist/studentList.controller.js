@@ -12,9 +12,8 @@
       dataService.getDetails(url, data).then(function(response){
         if(response){
           $scope.slists = response;
-        }else{
-          console.log('wrong data..!!!');
         }
+        $(['ng-nicescroll']).getNiceScroll().resize();
       });
     }
     $scope.init();

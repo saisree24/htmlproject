@@ -8,22 +8,20 @@
   function ViewStudentController($scope, $state, $stateParams, dataService, baseurls) {
     var bmi;
     var waistreport;
+    $(['ng-nicescroll']).getNiceScroll().resize();
     $scope.init = function(){
-      console.log('$stateParams', $stateParams.student);
       var url = baseurls.url + "getstudent";
       var data = {user : $stateParams.student};
       dataService.getStudentData(url, data).then(function(response){
         if(response){
           $scope.student = response;
-        }else{
-          console.log('wrong data..!!!');
         }
       });
     }
     $scope.waistlist = ['Abnormally Slim','Extremely slim','Slender and Healthy','Healthy, Normal, Attractive Weight','High weight','Extremely Overweight/Obese','Highly Obese'];
     $scope.bmilist = ['obese','overweight','healthy','underweight'];
     $scope.init();
-    $scope.bmireport = function(height,weight){        
+    $scope.bmireport = function(height,weight){
       var heightinmts = height*0.3048;
       bmi = Math.round(((weight/heightinmts)/heightinmts) * 100) / 100;
       return bmi;
@@ -69,16 +67,15 @@
         waistclass = "healthy-normal-attractive-weight";
       }
       else if(val > 53 && val < 58){
-        waistclass = "high-weight";        
+        waistclass = "high-weight";
       }
       else if(val > 58 && val < 63){
-        waistclass = "extremely-overweight-obese";        
+        waistclass = "extremely-overweight-obese";
       }
       else if(val < 63){
-        waistclass = "highly-obese";        
+        waistclass = "highly-obese";
       }
       return waistclass;
-     
     }
 
   }
