@@ -5,10 +5,12 @@
     .controller('ViewStudentController', ViewStudentController);
 
   /** @ngInject */
-  function ViewStudentController($scope, $state, $stateParams, dataService, baseurls) {
+  function ViewStudentController($scope, $state, $stateParams, dataService, baseurls,$timeout) {
     var bmi;
     var waistreport;
-    $(['ng-nicescroll']).getNiceScroll().resize();
+    $timeout(function() {
+      $(['ng-nicescroll']).getNiceScroll().resize();
+    }, 500);
     $scope.init = function(){
       var url = baseurls.url + "getstudent";
       var data = {user : $stateParams.student};
