@@ -1,11 +1,51 @@
 const express = require('express');
 const router = express.Router();
-
 const Contact = require('../models/contacts');
 const Credentials = require('../models/credentials');
 const Students = require('../models/students');
 const Dashboard = require('../models/dashboard');
+const HealthTips = require('../models/healthtips');
+const sgMail = require('@sendgrid/mail');
 
+function intervalFunc() {
+  var tips;
+  HealthTips.find((err, healthtips)=>{
+    if(err){
+        res.json({msg:'Failed to add Health Tips', status: false});
+    }else{
+      tips = healthtips;
+    }
+  });
+  Students.find(function(err, response){
+      if(err){
+        res.json({msg: 'Something went Wrong'});
+      }else{
+        if(response){
+          for(var i = 0; i < response.length; i++){
+            for(var j = 0; j < tips.length; j++){
+              if(response[i].shSuggest[0] == tips[j].healthIssue){
+                  sendMail(response[i].user, tips[j].tips[0]);
+              }
+            }
+          }
+        }
+      }
+  });
+}
+
+function sendMail(mailId, tip){
+  sgMail.setApiKey('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');
+  const msg = {
+      to: 'anandaraju.geddada@gmail.com',
+      from: 'nexthealthcare@gmail.com',
+      subject: 'Next Health Care Tips',
+      text: tip,
+      html: '<strong>'+ tip +'</strong>'
+  };
+  sgMail.send(msg);
+}
+
+//setInterval(intervalFunc, 2000);
 // send otp for new user
 router.post('/sendtextmsg', (req, res, next)=>{
   // var accountSid = 'ACe48ad675aba4085a07693070b32dde9d';
@@ -17,6 +57,7 @@ router.post('/sendtextmsg', (req, res, next)=>{
     //require the Twilio module and create a REST client
     var toMsg = '+91'+req.body.user;
     var otp = Math.floor(Math.random()*89999+100000) + 4;
+    console.log('otp', otp);
     var client = require('twilio')(accountSid, authToken);
     var isNewUser = false;
     Credentials.findOne({user:req.body.user}, function(err,response){
@@ -170,6 +211,27 @@ router.post('/storeDashboard', (req,res,next)=>{
   });
 });
 
+// add health tips
+router.post('/addhealthtip', (req,res,next)=>{
+  let newHealthTips = new HealthTips(req.body);
+  newHealthTips.save((err, Students)=>{
+    if(err){
+        res.json({msg:'Failed to add Health Tips', status: false});
+    }else{
+      res.json({msg:'Health Tips Added Successfully', status: true});
+    }
+  });
+});
+// health tips
+router.get('/healthtips', (req,res,next)=>{
+  HealthTips.find((err, healthtips)=>{
+    if(err){
+        res.json({msg:'Failed to add Health Tips', status: false});
+    }else{
+      res.json(healthtips);
+    }
+  });
+});
 
 
 
