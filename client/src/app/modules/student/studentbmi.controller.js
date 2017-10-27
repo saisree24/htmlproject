@@ -44,7 +44,33 @@
 
       $scope.slists = [
         {
-          age: 15,
+          name: 'Adom Andrews',
+          age: '15Years',
+          date: '27-Oct-17',
+          bgroup: ' B+'
+        },
+        {
+          name: 'Adom Andrews',
+          age: '15Years',
+          date: '27-Oct-17',
+          bgroup: ' B+'
+        },
+        {
+          name: 'Adom Andrews',
+          age: '15Years',
+          date: '27-Oct-17',
+          bgroup: ' B+'
+        },
+        {
+          name: 'Adom Andrews',
+          age: '15Years',
+          date: '27-Oct-17',
+          bgroup: ' B+'
+        },
+        {
+          name: 'Adom Andrews',
+          age: '15Years',
+          date: '27-Oct-17',
           bgroup: ' B+'
         }
       ];

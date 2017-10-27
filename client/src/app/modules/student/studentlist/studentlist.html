@@ -1,49 +1,53 @@
-<div class="p-l-50 p-r-50 p-t-20 " ng-nicescroll>
+<div class="p-l-50 p-r-50 p-t-20 student-list " ng-nicescroll>
     <div layout="row" layout-align="space-between center">
         <h1 class="md-headline black-text">Student List</h1>
         <md-button class="md-button md-raised addon-bg white-text">Add a New Student </md-button>
     </div>
-
-
-    <md-list ng-repeat="slist in slists" class="height100">
-        <md-list-item class="md-2-line m-b-0 blue-grey lighten-4" layout="row" layout-align="space-between center">
-                         
-            <div class="md-list-item-text p-15" layout="row" layout-align="space-between center" flex>
-                    <p class="accent-color">Student name</p>
-                    <p class="blue-grey-text lighten-3">Age
-                       
-                    </p>
-                    <p class="blue-grey-text lighten-3">Blood Group
-                        </p>
-                </div>
-                
-         
+    <md-list class="height100">
+        <md-list-item class="md-2-line m-b-0 blue-grey lighten-4" layout="row">
+        <div class="md-list-item-text header" layout="row" flex>
+            <p flex="30"> Student Name </p>
+            <p flex="30">Age </p>
+            <p flex="30">Joined Date </p>
+            <p flex="30">Blood Group </p>
+            <p flex="30">Status </p>
+            <p> Actions </p>
+        </div>
         </md-list-item>
-        <md-list-item class="md-2-line white m-b-10">
-            <div class="md-list-item-text p-15" layout="row" layout-align="start center">
-                <img src="assets/images/user_default.png" class="md-avatar" />
-                <div layout="column" flex>
-                    <h3 class="accent-color">Student name</h3>
-                    <p class="blue-grey-text lighten-3">Age:
-                        <span class="green-text">{{slist.age}}</span> Blood Group:
-                        <span class="green-text">{{slist.bgroup}}</span>
-                    </p>
-                </div>
-                <md-menu>
-                    <md-button aria-label="Open more interactions menu" class="md-icon-button md-primary" ng-click="$mdOpenMenu()">
-                        <md-icon md-menu-origin class="material-icons">more_horiz</md-icon>
-                    </md-button>
-                    <md-menu-content width="2">
-                        <md-menu-item ng-repeat="list in lists">
-                            <md-button class="md-mini" ng-click="ctrl.redial($event)">
-                                <md-icon class="green-text list-icon" md-menu-align-target>{{list.icon}}</md-icon>
-                                {{list.name}}
-                            </md-button>
-                        </md-menu-item>
-                    </md-menu-content>
-                </md-menu>
-            </div>
+    
+        <md-list-item class="md-2-line m-b-0 white" layout="row" ng-repeat="slist in slists">
+        <div class="md-list-item-text p-15" layout="row" flex>
+            <p class="blue-grey-text" flex="30" layout="row" layout-align="start center">{{slist.name}}</p>
+            <p class="blue-grey-text lighten-3" flex="30" layout="row" layout-align="start center">{{slist.age}}</p>
+            <p class="blue-grey-text lighten-3" flex="30" layout="row" layout-align="start center">{{slist.date}}</p>
+            <p class="blue-grey-text lighten-3" flex="30" layout="row" layout-align="start center">{{slist.bgroup}} </p>
+            <p class="blue-grey-text lighten-3" flex="30" layout="row" layout-align="start center">
+            <md-button class="md-button list-button">
+                <md-icon class="green-text material-icons list-icon m-0 p-0">brightness_1</md-icon>
+                Active
+            </md-button>
+            </p>
+            <md-menu class="m-0 p-0">
+            <md-button aria-label="Open more interactions menu" class="md-icon-button md-primary p-0 m-0" ng-click="$mdOpenMenu()">
+                <md-icon md-menu-origin class="material-icons">more_horiz</md-icon>
+            </md-button>
+            <md-menu-content width="2">
+                <md-menu-item ng-repeat="list in lists">
+                <md-button class="md-mini" ng-click="ctrl.redial($event)">
+                    <md-icon class="green-text list-icon" md-menu-align-target>{{list.icon}}</md-icon>
+                    {{list.name}}
+                </md-button>
+                </md-menu-item>
+            </md-menu-content>
+            </md-menu>
+            
+        </div>
+
+        <md-divider class="d-border"></md-divider>
+        
         </md-list-item>
+    
+    
     </md-list>
-
-</div>
+    
+    </div>
