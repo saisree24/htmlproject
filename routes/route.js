@@ -71,7 +71,8 @@ router.post('/checkotp', (req,res,next)=>{
         if(err){
           res.json({msg: 'Something went wrong', status: false});
         }else{
-          if(response == null){
+          console.log('response', response);
+          if(response != null){
             res.json({msg: 'successfully logged', status: true});
           }else{
             res.json({msg: 'No records found with your credentials', status: false});
