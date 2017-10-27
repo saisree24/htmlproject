@@ -36,7 +36,7 @@
       studentObj.sweight = student.sweight;
       studentObj.swaist = student.swaist;
       studentObj.user = student.user;
-
+      studentObj.semail = student.semail;
       var date = new Date($scope.sdob);
       var d = date.getDate();
       var m = date.getMonth() + 1;

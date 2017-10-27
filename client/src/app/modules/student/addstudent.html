@@ -51,9 +51,12 @@
                             </div>
                         </md-input-container>
                         <md-input-container class="md-block m-l-10" flex="33">
-                            <label>Emergency Phone</label>
-                            <input md-no-asterisk name="senum" ng-model="student.senum" class="m-b-5">
-                            <div class="hint md-caption">Enter Emergency Phone number</div>
+                            <label>Email</label>
+                            <input md-no-asterisk name="semail" ng-model="student.semail" required class="m-b-5">
+                            <div class="hint md-caption">Enter Email id</div>
+                            <div ng-messages="studentForm.semail.$error">
+                                <div ng-message="required">This is required.</div>
+                            </div>
                         </md-input-container>
 
                     </div>
@@ -94,17 +97,15 @@
                     <div flex="33" layout="column" layout-align="center start">
                         <md-datepicker ng-model="sdob" md-placeholder="Enter DOB"></md-datepicker>
                     </div>
-
                     <md-switch ng-model="student.sState" aria-label="Switch 1" class="md-primary m-t-30">
                      Student Status <span ng-if="status == true">Active</span><span ng-if="status == false">Inactive</span>
                     </md-switch>
-
                 </div>
 
             <fieldset class="standard m-t-35" >
             <legend>Health Related Issue</legend>
                 <div layout="row" layout-wrap flex class="p-20">
-                    <div flex="50" ng-repeat="item in ['ADD/ADHD','Asthama/Inhaler','Bedwetting','Behavioural issues','Blackouts/Fainting','Chest pain','Concussion','Constipation/Diarrhea','Developmental Delays','Diabetes','Downs Syndrome','Ear Infections','Eating Disorder','Epilepsy','Frequent Colds','Hay Fever','Headaches','Heating Problems','Heart Disease','High Blood Pressure','Menstrual Difficulties','Mental Health Issues','Mouth injuries','Neck/Back Pain or Injury', 'Pneumonia','Pespiratory Aliments','Seizures','Sinus Infections','Speech Problems','Eye Glasses']">
+                    <div flex="50" ng-repeat="item in ['Asthama','Frequent Colds','Behavioural issues','Blackouts/Fainting']">
                     <md-checkbox ng-checked="exists(item, selected)" ng-click="toggle(item, selected)">
                         {{ item }}
                     </md-checkbox>

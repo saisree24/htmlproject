@@ -6,7 +6,6 @@
 
   /** @ngInject */
   function StudentListController($scope, $state, dataService, baseurls) {
-
     $scope.init = function(){
       var url = baseurls.url + "getStudentDetails";
       var data = '';
@@ -32,11 +31,9 @@
         }
       });
     }
-
     $scope.addStudent = function(){
       $state.go('dashboard.addstudent');
     }
-
     $scope.updateStudents = function(student){
       angular.forEach($scope.slists, function(data, index){
         if(data.user == student){
