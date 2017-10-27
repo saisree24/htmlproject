@@ -4,6 +4,7 @@ const router = express.Router();
 const Contact = require('../models/contacts');
 const Credentials = require('../models/credentials');
 const Students = require('../models/students');
+const Dashboard = require('../models/dashboard');
 
 // send otp for new user
 router.post('/sendtextmsg', (req, res, next)=>{
@@ -18,7 +19,6 @@ router.post('/sendtextmsg', (req, res, next)=>{
     var otp = Math.floor(Math.random()*89999+100000) + 4;
     var client = require('twilio')(accountSid, authToken);
     var isNewUser = false;
-    console.log('otp', otp);
     Credentials.findOne({user:req.body.user}, function(err,response){
         if(err){
           res.json({msg: 'Some Network Error', status: false});
@@ -54,9 +54,13 @@ router.post('/sendtextmsg', (req, res, next)=>{
 router.post('/checkcredentials', (req,res,next)=>{
     Credentials.findOne({user:req.body.user, password:req.body.password}, function(err,credentials){
         if(err){
-          res.json({msg: 'No record Found', status: false});
+          res.json({msg: 'Something Went Wrong', status: false});
         }else{
-          res.json({msg: 'successfully logged', status: true});
+          if(credentials == null){
+            res.json({msg: 'No Records found with your Credentials', status: false});
+          }else{
+            res.json({msg: 'Successfully Logged', status: true});
+          }
         }
     });
 });
@@ -65,9 +69,13 @@ router.post('/checkcredentials', (req,res,next)=>{
 router.post('/checkotp', (req,res,next)=>{
     Credentials.findOneAndUpdate({user:req.body.user, otp:req.body.otp}, req.body, function(err, response){
         if(err){
-          res.json({msg: 'No record Found', status: true});
+          res.json({msg: 'Something went wrong', status: false});
         }else{
-          res.json({msg: 'successfully logged', status: true});
+          if(response == null){
+            res.json({msg: 'successfully logged', status: true});
+          }else{
+            res.json({msg: 'No records found with your credentials', status: false});
+          }
         }
       });
 });
@@ -75,13 +83,8 @@ router.post('/checkotp', (req,res,next)=>{
 
 // add student
 router.post('/addstudent', (req,res,next)=>{
-  let newStudent = new Students({
-      user: req.body.user,
-      sfname: req.body.sfname,
-      sdob: req.body.sdob,
-      sheight: req.body.sheight,
-      sweight: req.body.sweight
-  });
+
+  let newStudent = new Students(req.body);
   newStudent.save((err, Students)=>{
     if(err){
         res.json({msg:'Failed to add student', status: false});
@@ -91,6 +94,21 @@ router.post('/addstudent', (req,res,next)=>{
   });
 });
 
+
+// get student
+router.post('/getstudent', (req,res,next)=>{
+  Students.findOne({user:req.body.user}, function(err, response){
+    if(err){
+      res.json({msg: 'Something went wrong with student data.', status: false});
+    }else{
+      if(response != null){
+          res.json(response);
+      }else{
+        res.json({msg: 'No student found with that details.', status: false});
+      }
+    }
+  });
+});
 // update student
 router.post('/updatestudent', (req,res,next)=>{
   Students.findOneAndUpdate({user:req.body.user}, req.body, function(err, response){
@@ -122,5 +140,36 @@ router.get('/getStudentDetails', (req,res,next)=>{
         }
     });
 });
+
+
+// get students health progress
+router.get('/getDashboardDetails', (req,res,next)=>{
+    Dashboard.find(function(err, response){
+        if(err){
+          res.json({msg: 'Something went Wrong'});
+        }else{
+          res.json(response);
+        }
+    });
+});
+
+// get students health progress
+router.post('/storeDashboard', (req,res,next)=>{
+  let newDashboard = new Dashboard({
+      month: req.body.month,
+      students: req.body.students
+  });
+  newDashboard.save(function(err, history){
+      if(err){
+        res.json({msg:'Failed to add student', status: false});
+      }else{
+        console.log('history', history);
+        res.json({msg:'History Added Successfully', status: true});
+      }
+  });
+});
+
+
+
 
 module.exports = router;
