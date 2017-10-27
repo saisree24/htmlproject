@@ -1,5 +1,5 @@
-<div class="login-page" layout="row" layout-align="center center" flex="100">
-  <md-card class="animated zoomInUp" layout="column" flex-xs="80" flex-sm="70" flex="25">
+<div class="login-page" layout="row" layout-align="start center" flex="100">
+  <md-card class="animated zoomInUp m-l-100" layout="column" flex-xs="80" flex-sm="70" flex="25">
     <form name="login">
       <md-card-title class="blue white-text">
         <md-card-title-text>
@@ -25,7 +25,7 @@
           <md-icon class="material-icons name">vpn_key</md-icon>
           <input type="password" name="password" ng-model="credentials.password" required />
         </md-input-container>
-        <div layout="row" layout-align="end center" class="blue-text newuser"><span ng-click="isNewUser= !isNewUser">New User?</span></div>
+        <div layout="row" layout-align="end center" class="blue-text newuser"><span class="cursor-pointer" ng-click="isNewUser= !isNewUser">New User?</span></div>
       </md-card-content>
       <md-card-actions class="md-padding m-t-0 p-t-0" layout="row" layout-align="center center">
         <md-button class="md-raised md-primary signin" ng-click="sendOtp(credentials)" ng-disabled="login.user.$invalid" ng-if="!hasOtp && isNewUser">Send OTP</md-button>
