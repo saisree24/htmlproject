@@ -74,7 +74,7 @@
                         <li>Heavy yard work, like shoveling</li>
                     </ul>
                 </div>
-                <div flex-gt-md="35" flex-gt-sm="45" flex="50" class="bmi-scale border-top">
+                <div flex-gt-md="45" flex-gt-sm="45" flex="50" class="bmi-scale border-top">
                     <div layout="row" class="border-bottom" ng-repeat="item in bmilist">
                         <div flex class="m-t-5 text-uppercase">{{item}}</div>
                         <div class="{{item}}" flex></div>
@@ -92,10 +92,10 @@
                 <h3 class="score-title">Waist-height Report</h3>
                 <div layout="row" layout-align="space-between center">
                     <div flex="50">
-                        <md-icon class="bmi-report animated jello infinite waist" ng-class="waistclass(waistreport(student.swaist,student.sheight))">accessibility</md-icon>
+                        <md-icon class="bmi-report animated jello infinite waist" ng-class="waistclass(waistreport(student.swaist,student.sheight),student.sgender)">accessibility</md-icon>
                         <span class="bmi-score">{{waistreport(student.swaist,student.sheight)}}</span>
                         <hr class="m-t-15 m-b-15" />
-                        <p class="md-title">See how many points student scored in set of questions related to your BMI Analysis.</p>
+                        <p class="md-title">See how many points student scored in set of questions related to your Waist height Ratio Analysis.</p>
 
                         <h4 class="md-heading">Keep Your health Fit...</h4>
                         <ul class="md-subhead">
@@ -107,17 +107,14 @@
                     </div>
                     <div flex-gt-md="45" flex-gt-sm="45" flex="50" class="bmi-scale border-top">
                         <div layout="row" class="border-bottom" ng-repeat="item in waistlist"> 
-                            <div flex class="m-t-5 text-uppercare">{{item}}</div>                        
-                            <div class="{{item | spaceless | lowercase}}" flex></div>
+                            <div flex class="m-t-5 text-uppercare">{{item.type}}</div>                        
+                            <div class="{{item.type | spaceless | lowercase}}" flex></div>
                         </div>
-                        <hr class="m-t-35 m-b-15" />
-                        <div layout="column">
+                        
+                        <div layout="column" class="m-t-25" ng-if="waistreport(student.swaist,student.sheight) > 0.5">
                             <span class="red-text m-b-10">You are above the 0.50 limit.</span>
                             <span class="md-title">Losing <span class="red-text">{{reducereport(waistreport(student.swaist,student.sheight))}} cm</span> off your waist will lower the risk of diabetes, heart disease and stroke</span>
                         </div>
-                        <h3 ng-if="waistreport(student.swaist,student.sheight) > 50">Health Action</h3>
-                        <p class="text-capitalize md-display-3 m-0">Take Action</p>
-                        <p class="md-title">See how many points student scored in set of questions related to your BMI Analysis.</p>
                     </div>
                 </div>
 
