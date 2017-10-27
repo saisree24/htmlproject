@@ -1,0 +1,129 @@
+<div class="p-l-50 p-r-50 p-t-20 p-b-20" ng-nicescroll>
+    <div layout="row" class="m-t-10 m-b-45">
+        <div>
+            <h3 class="md-title m-0 grey-text text-darken-2">Add Student</h3>
+            <p class="m-0 md-caption">Details Of the student</p>
+        </div>
+        <span flex></span>
+        <md-button class="md-raised addon-bg white-text m-0">View List</md-button>
+    </div>
+        
+
+      <md-card class="p-25 m-0">
+        <form name="studentForm">   
+            <div layout="row">
+                    <md-input-container class="md-block" flex="33">
+                        <label>First Name</label>
+                        <input required md-no-asterisk name="first_name" ng-model="first_name">
+                        <div ng-messages="studentForm.first_name.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block m-l-10" flex="33">
+                        <label>Last Name</label>
+                        <input md-no-asterisk name="last_name" ng-model="last_name">
+                        <div ng-messages="studentForm.last_name.$error">
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block m-l-10" flex="33">
+                            <label>Phone Number</label>
+                            <input required md-asterisk name="phone" ng-model="phone">
+                            <div ng-messages="studentForm.phone.$error">
+                                <div ng-message="required">This is required.</div>
+                            </div>
+                        </md-input-container>
+                </div> 
+                <div layout="row">
+                        <md-input-container class="md-block" flex="33">
+                            <label>Age</label>
+                            <input required md-no-asterisk name="age" ng-model="age" class="m-b-5">
+                            <div class="hint md-caption">Enter Student Age</div>
+                            <div ng-messages="studentForm.age.$error">
+                                <div ng-message="required">This is required.</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block m-l-10" flex="33">
+                            <label>Blood Group</label>
+                            <input required md-no-asterisk name="bgroup" ng-model="bgroup" class="m-b-5">
+                            <div class="hint md-caption">Enter Student Blood Group</div>
+                            <div ng-messages="studentForm.bgroup.$error">
+                                <div ng-message="required">This is required.</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block m-l-10" flex="33">
+                            <label>Emergency Phone</label>
+                            <input md-no-asterisk name="ephone" ng-model="ephone" class="m-b-5">
+                            <div class="hint md-caption">Enter Emergency Phone number</div>
+                        </md-input-container>
+                        
+                    </div>
+                <div layout="row">
+                    <md-input-container class="md-block" flex="33">
+                        <label>Height</label>
+                        <input required md-no-asterisk name="height" ng-model="height" class="m-b-5">
+                        <div class="hint md-caption">Enter Student height in Feet</div>
+                        <div ng-messages="studentForm.height.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block m-l-10" flex="33">
+                        <label>Weight</label>
+                        <input required md-no-asterisk name="weight" ng-model="weight" class="m-b-5">
+                        <div class="hint md-caption">Enter Student Weight in Kgs</div>
+                        <div ng-messages="studentForm.weight.$error">
+                                <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block m-l-10" flex="33">
+                        <label>Waist</label>
+                        <input required md-asterisk name="waist" ng-model="waist" class="m-b-5">
+                        <div class="hint md-caption">Enter Student Waist size in Inch</div>
+                        <div ng-messages="studentForm.waist.$error">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-input-container class="md-block m-l-5" flex="33" layout="column" layout-align="center">
+                        <label>Gender</label>
+                        <md-radio-group ng-model="gender" layout="row" class="m-t-30">
+                                
+                            <md-radio-button value="Male" class="md-primary">Male</md-radio-button>
+                            <md-radio-button value="Female" class="md-primary"> Female </md-radio-button>
+                    
+                        </md-radio-group>
+                    </md-input-container>
+                    <div flex="33" layout="column" layout-align="center start">
+                        <md-datepicker ng-model="dob" md-placeholder="Enter DOB"></md-datepicker>
+                    </div>
+
+                    <md-switch ng-model="status" aria-label="Switch 1" class="md-primary m-t-30">
+                     Student Status <span ng-if="status == true">Active</span><span ng-if="status == false">Inactive</span>
+                    </md-switch>
+                   
+                </div>
+            
+            <fieldset class="standard m-t-35" >
+            <legend>Health Related Issue</legend>
+                <div layout="row" layout-wrap flex class="p-20">
+                    <div flex="50" ng-repeat="item in ['ADD/ADHD','Asthama/Inhaler','Bedwetting','Behavioural issues','Blackouts/Fainting','Chest pain','Concussion','Constipation/Diarrhea','Developmental Delays','Diabetes','Downs Syndrome','Ear Infections','Eating Disorder','Epilepsy','Frequent Colds','Hay Fever','Headaches','Heating Problems','Heart Disease','High Blood Pressure','Menstrual Difficulties','Mental Health Issues','Mouth injuries','Neck/Back Pain or Injury', 'Pneumonia','Pespiratory Aliments','Seizures','Sinus Infections','Speech Problems','Eye Glasses']">
+                    <md-checkbox ng-checked="exists(item, selected)" ng-click="toggle(item, selected)">
+                        {{ item }}
+                    </md-checkbox>
+                    </div>
+                </div>
+            </fieldset>
+
+
+            <div layout="row" layout-align="end" class="m-t-45">
+                <md-button class="md-raised md-primary">Cancel</md-button>
+                <md-button class="md-raised addon-bg white-text">Submit</md-button>
+            </div>
+            
+            
+                
+                
+                               
+        </form>
+      </md-card>
+</div>
