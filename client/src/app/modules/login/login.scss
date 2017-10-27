@@ -1,5 +1,7 @@
 .login-page{
-    z-index: 2;
+    & md-card{
+        z-index: 99;
+    }
     & .user{
         right: 0px !important;
         top: -35px !important;
