@@ -2,7 +2,16 @@
     'use strict';
   
     angular.module('nextHealthCare')
-      .controller('StudentbmiController', StudentbmiController);
+      .controller('StudentbmiController', StudentbmiController)
+      .filter('spaceless',function() {
+        return function(input) {
+            if (input) {
+              var text = input.replace(/,/g, '');
+              var slash = text.replace(/\//g, '-');
+                return slash.replace(/\s+/g, '-');    
+            }
+        }
+    });
   
     /** @ngInject */
     function StudentbmiController($scope) {
@@ -90,10 +99,7 @@
         }
         
       ];
-
-  
-  
-
+      
     }
   })();
   

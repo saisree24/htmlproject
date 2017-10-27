@@ -21,12 +21,62 @@
     }
     &.underweight{
         color: #4aa6e5;
-    }  
+    } 
+    &.abnormally-slim{
+        color: #675ca1;
+    }
+    &.extremely-slim{
+        color: #58b5de;
+    }
+    &.slender-and-healthy{
+        color: #ffcc01;
+    }
+    &.healthy-normal-attractive-weight{
+        color: #eb7008;
+    }
+    &.extremely-overweight-obese{
+        color: #bf1e2e;
+    }
+    &.highly-obese{
+        color: #7f0814;
+    } 
+    &.high-weight{
+        color: #e22538;
+    }
+
+    &.waist{
+        &.animated 
+        {
+            animation-duration: 3s;
+            animation-fill-mode: both;
+        }
+    }
+}
+.blooddrop{
+
+    width:12px;
+    height: 17px;
+    -webkit-animation:blooddrop 2s infinite;animation:blooddrop 2s infinite;
+    @-webkit-keyframes blooddrop {
+        0%{-webkit-transform:translate(0,-50%);opacity:0}
+        40%{opacity:1}
+        80%{-webkit-transform:translate(0,30%);opacity:0}
+        100%{opacity:0}
+    }
+    @keyframes blooddrop {
+        0%{-webkit-transform:translate(0,-50%);transform:translate(0,-50%);opacity:0}
+        40%{opacity:1}
+        80%{-webkit-transform:translate(0,30%);transform:translate(0,30%);opacity:0}
+        100%{opacity:0}
+    }
+
+    
+    
 }
 .bmi-score{
     font-size: 4em;
     position: relative;
-    top: 80px;
+    top: 85px;
     &:after{
         content: "";
         width: 2px;
@@ -40,7 +90,7 @@
     }
 }
 .bmi-scale{
-    & .obese, .healthy, .overweight, .underweight{        
+    & .obese, .healthy, .overweight, .underweight,.abnormally-slim,.extremely-slim,.slender-and-healthy,.healthy-normal-attractive-weight,.extremely-overweight-obese,.highly-obese,.high-weight{        
         position: relative;
     }
     & .obese{
@@ -91,4 +141,89 @@
             right:20px;
         }  
     }
+    & .abnormally-slim{
+        background: #675ca1;
+        height:30px;
+        &:after{
+            content: "Below 35";
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.9);
+            right:20px;
+        }  
+    }
+    & .extremely-slim{
+        background: #58b5de;
+        height:45px;
+        &:after{
+            content: "35 to 43";
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            color: #000;
+            right:20px;
+        }  
+    }
+    & .slender-and-healthy{
+        background: #ffcc01;
+        height:50px;
+        &:after{
+            content: "43 to 46";
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            color: #000;
+            right:20px;
+        }  
+    }
+    & .healthy-normal-attractive-weight{
+        background: #eb7008;
+        height:50px;
+        &:after{
+            content: "46 and 53";
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            color: #000;
+            right:20px;
+        }  
+    }
+    & .extremely-overweight-obese{
+        background: #bf1e2e;
+        height:70px;
+        &:after{
+            content: "58 to 63";
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.9);
+            right:20px;
+        }  
+    }
+    & .highly-obese{
+        background: #7f0814;
+        height:80px;
+        &:after{
+            content: "Above 63";
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.9);
+            right:20px;
+        }  
+    }
+    & .high-weight{
+        background: #e22538;
+        height:40px;
+        &:after{
+            content: "53 to 58";
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            color: #fff;
+            right:20px;
+        }  
+    }
+    
 }

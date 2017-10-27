@@ -46,7 +46,7 @@
       studentObj.sgender = student.sgender;
       studentObj.sbGroup = student.sbGroup;
       studentObj.shSuggest = $scope.selected;
-      studentObj.sheight = student.swaist;
+      studentObj.sheight = student.sheight;
       studentObj.sweight = student.sweight;
       studentObj.swaist = student.swaist;
       studentObj.user = student.user;
