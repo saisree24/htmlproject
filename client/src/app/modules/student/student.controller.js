@@ -23,6 +23,17 @@
       return list.indexOf(item) > -1;
     };
 
+    function bmireport(height,weight){
+      var heightinmts = Math.round((height*0.3048) * 100) / 100;
+      var bmi = Math.round(((weight/heightinmts)/heightinmts) * 100) / 100;
+      return bmi;
+    }
+
+    function waistreport(waist,height){
+      var waistreport = Math.round((((waist*2.54)/(height*30.48)) * 100) * 100) / 100;
+      return waistreport;
+    }
+
     $scope.cancel = function(){
       $state.go('dashboard.studentlist');
     };
@@ -41,6 +52,8 @@
       studentObj.user = student.user;
       studentObj.semail = student.semail;
       studentObj.shIssue = 0;
+      studentObj.bmireport = bmireport(student.sheight,student.sweight);
+      studentObj.waistreport = waistreport(student.swaist,student.sheight);
       var date = new Date($scope.sdob);
       var d = date.getDate();
       var m = date.getMonth() + 1;
