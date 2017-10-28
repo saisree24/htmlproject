@@ -49,7 +49,7 @@ function sendMobile(toMsg, tip){
       to: msg,
       // from: "+12244790672",
       from: "+14158554299",
-      body: 'Next Health Care Tip: '+ tip
+      body: 'Next Health Care Tip on Fever: '+ tip
   });
 }
 function sendMail(mailId, tip){
@@ -58,14 +58,14 @@ function sendMail(mailId, tip){
   //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
   //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
 
-  sgMail.setApiKey('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');
+  sgMail.setApiKey('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');
   const msg = {
       to: mailId,
       from: 'nexthealthcare@gmail.com',
       subject: 'Next Health Care Tips',
       text: tip,
       html:  "<body style='font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;'>\
-            <table cell-spacing='0' cell-padding='0' background='http://webappsdeveloper.net/body-bg.jpg' style='width:600px; height:576px;' align='center' valign='top' border='0'>\
+            <table cell-spacing='0' cell-padding='0' background='http://webappsdeveloper.net/body-bg.jpg' style='width:600px; height:450px;' align='center' valign='top' border='0'>\
             <tr>\
               <td width='20'></td>\
               <td valign='center' cell-spacing='0' cell-padding='0'>\
@@ -73,7 +73,7 @@ function sendMail(mailId, tip){
                <h3 style='margin:0; font-size:18px; line-height:24px;'>Suggestion:-</h3>\
                <p style='margin:0; font-size:16px; line-height:24px;'>"+ tip + "</p>\
                </td>\
-               <td width='280'></td>\
+               <td width='150'></td>\
             </tr>\
             </tr>\
           </table>\
