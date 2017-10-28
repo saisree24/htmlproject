@@ -65,7 +65,7 @@ function sendMail(mailId, tip){
       subject: 'Next Health Care Tips',
       text: tip,
       html:  "<body style='font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;'>\
-            <table cell-spacing='0' cell-padding='0' background='http://webappsdeveloper.net/body-bg.jpg' style='width:768px; height:576px;' align='center' valign='top' border='0'>\
+            <table cell-spacing='0' cell-padding='0' background='http://webappsdeveloper.net/body-bg.jpg' style='width:600px; height:576px;' align='center' valign='top' border='0'>\
             <tr>\
               <td width='20'></td>\
               <td valign='center' cell-spacing='0' cell-padding='0'>\
