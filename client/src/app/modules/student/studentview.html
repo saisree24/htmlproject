@@ -2,7 +2,7 @@
         <md-card class="p-25 m-0">
             <div layout="row">
                 <div class="studentdata" layout="column" layout-align="center center">
-                    <img src="assets/images/male.png" alt="" class="circle_radius" width="50">
+                    <img src="assets/images/{{student.sgender}}.gif" alt="" class="circle_radius" width="50">
                     <div layout="row" class="m-t-15">
                         <md-button class="md-raised md-primary md-button md-buttons ad-btn">
                             Edit profile
@@ -30,11 +30,11 @@
                      <div layout="row" layout-align="start center" class="border-top p-t-25 m-t-15">
                          <div layout="column">
                                 <span class="m-b-10 md-caption">BMI</span>
-                                <span class="md-display-1 primary-color">{{bmireport(student.sheight,student.sweight)}}</span>
+                                <span class="md-display-1 primary-color">{{student.bmireport}}</span>
                          </div>
                          <div layout="column" class="m-l-45">
                                 <span class="m-b-10 md-caption">Waist-Height-Ratio</span>
-                                <span class="md-display-1 primary-color">{{waistreport(student.swaist,student.sheight)}}</span>
+                                <span class="md-display-1 primary-color">{{student.waistreport}}</span>
                          </div>
                          <div layout="column" class="m-l-45">
                                 <span class="m-b-10 md-caption">Health Issues</span>
@@ -60,8 +60,8 @@
             <div layout="row" layout-align="space-between center">
                 <div flex="50">        
       
-                    <md-icon class="bmi-report  animated pulse infinite" ng-class="bmiclass(bmireport(student.sheight,student.sweight))">favorite</md-icon>
-                    <span class="bmi-score">{{bmireport(student.sheight,student.sweight)}}</span>
+                    <md-icon class="bmi-report  animated pulse infinite" ng-class="bmiclass(student.bmireport)">favorite</md-icon>
+                    <span class="bmi-score">{{student.bmireport}}</span>
                     <p class="md-title">See how many points student scored in set of questions related to your BMI Analysis.</p>
 
                     <h4 class="md-heading">Keep Your health Fit...</h4>
@@ -77,21 +77,20 @@
                         <div flex class="m-t-5 text-uppercase">{{item}}</div>
                         <div class="{{item}}" flex></div>
                     </div>
-                    <hr class="m-t-35 m-b-15" />
-                    <h3>Health Action</h3>
-                    <p class="text-capitalize md-display-3 m-0">Take Action</p>
-                    <p class="md-title">See how many points student scored in set of questions related to your BMI Analysis.</p>
+                    <h3 class="m-t-45">Your suggested healthy weight range <span class="red-text">50.4 - 67.8kg</span></h3>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
                 </div>
             </div>
 
         </md-card>
         <br/>
         <md-card class="p-25 m-0">
-                <h3 class="score-title">Waist-height Report</h3>
+                <h3 class="score-title">Waist-height Report <span class="md-title" ng-if="student.waistreport > 50">/ Losing <span class="red-text md-title">{{reducereport(student.waistreport)}} cm</span> off your waist</span></h3> 
                 <div layout="row" layout-align="space-between center">
                     <div flex="50">
-                        <md-icon class="bmi-report animated jello infinite waist" ng-class="waistclass(waistreport(student.swaist,student.sheight),student.sgender)">accessibility</md-icon>
-                        <span class="bmi-score">{{waistreport(student.swaist,student.sheight)}}</span>
+                        <md-icon class="bmi-report animated jello infinite waist" ng-class="waistclass(student.waistreport,student.sgender)">accessibility</md-icon>
+                        <span class="bmi-score">{{student.waistreport}}</span>
                         <hr class="m-t-15 m-b-15" />
                         <p class="md-title">See how many points student scored in set of questions related to your Waist height Ratio Analysis.</p>
 
@@ -108,10 +107,15 @@
                             <div flex class="m-t-5 text-uppercare">{{item.type}}</div>                        
                             <div class="{{item.type | spaceless | lowercase}}" flex></div>
                         </div>
+
+                        <!-- <div layout="column" class="border-bottom m-b-10" ng-repeat="item in waistlist"> 
+                                <div flex class="m-t-5 text-uppercare m-b-5">{{item.type}}</div>                        
+                                <div class="{{item.type | spaceless | lowercase}} linebase" flex></div>
+                        </div> -->
                         
-                        <div layout="column" class="m-t-25" ng-if="waistreport(student.swaist,student.sheight) > 0.5">
+                        <div layout="column" class="m-t-25" ng-if="student.waistreport > 50">
                             <span class="red-text m-b-10">You are above the 0.50 limit.</span>
-                            <span class="md-title">Losing <span class="red-text">{{reducereport(waistreport(student.swaist,student.sheight))}} cm</span> off your waist will lower the risk of diabetes, heart disease and stroke</span>
+                            <span class="md-title">Losing <span class="red-text">{{reducereport(student.waistreport)}} cm</span> off your waist will lower the risk of diabetes, heart disease and stroke</span>
                         </div>
                     </div>
                 </div>

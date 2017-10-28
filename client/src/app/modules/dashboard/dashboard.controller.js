@@ -100,5 +100,7 @@
     $scope.viewStudent = function(student){
       $state.go('dashboard.studentview', {student: student})
     }
+
+    
   }
 })();

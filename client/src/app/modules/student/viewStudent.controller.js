@@ -60,16 +60,7 @@
     ];
     $scope.bmilist = ['obese','overweight','healthy','underweight'];
     $scope.init();
-    $scope.bmireport = function(height,weight){
-      var heightinmts = height*0.3048;
-      bmi = Math.round(((weight/heightinmts)/heightinmts) * 100) / 100;
-      return bmi;
-    }
-
-    $scope.waistreport = function(waist,height){
-      waistreport = Math.round((((waist*2.54)/(height*30.48)) * 100) * 100) / 100;
-      return waistreport;
-    }
+    
     $scope.reducereport = function(val){
       return val/8;
     }

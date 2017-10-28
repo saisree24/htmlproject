@@ -38,12 +38,28 @@
       }
     };
 
+    $scope.studentList = function(){
+      $state.go('dashboard.studentlist');
+    }
+
     $scope.exists = function (item, list) {
       return list.indexOf(item) > -1;
     };
     $scope.cancel = function(){
       $state.go('dashboard.studentlist');
     };
+
+    function bmireport(height,weight){
+      var heightinmts = Math.round((height*0.3048) * 100) / 100;
+      var bmi = Math.round(((weight/heightinmts)/heightinmts) * 100) / 100;
+      return bmi;
+    }
+
+    function waistreport(waist,height){
+      var waistreport = Math.round((((waist*2.54)/(height*30.48)) * 100) * 100) / 100;
+      return waistreport;
+    }
+
     $scope.addStudent = function(student){
       var studentObj = {};
       studentObj.sState = student.sState;
@@ -59,6 +75,9 @@
       studentObj.user = student.user;
       studentObj.semail = student.semail;
       studentObj.shIssue = 0;
+      studentObj.bmireport = bmireport(student.sheight,student.sweight);
+      studentObj.waistreport = waistreport(student.swaist,student.sheight);
+
 
       var date = new Date($scope.sdob);
       var d = date.getDate();
@@ -67,6 +86,7 @@
       studentObj.sdob =  d + '-' + m  + '-'+ y;
       var url = baseurls.url + "updatestudent";
       var data = studentObj;
+      console.log(data);
       dataService.getData(url, data).then(function(response){
         if(response){
           console.log('added successfully');

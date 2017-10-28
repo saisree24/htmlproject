@@ -93,6 +93,17 @@
     & .obese, .healthy, .overweight, .underweight,.abnormally-slim,.extremely-slim,.slender-and-healthy,.healthy-normal-attractive-weight,.extremely-overweight-obese,.highly-obese,.high-weight{        
         position: relative;
     }
+    & .linebase{
+        height: 10px !important;
+        &:after{
+            top: -20px !important;
+            font-size: 14px;
+            -webkit-transform: none !important;
+            transform: none !important;
+            color: #000 !important;
+            right: 0px !important;
+        }
+    }
     & .obese{
         background: #e84c3d;
         height:80px;
