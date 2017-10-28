@@ -20,7 +20,9 @@
         }
       });
     }
-
+    $scope.editStudent = function(student){
+      $state.go('dashboard.editstudent', {student: student});
+    }
     $scope.sendmsg = function(){
       var url = baseurls.url + "sendnotifications";
       var data = {user : $stateParams.student};

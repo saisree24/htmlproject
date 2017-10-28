@@ -4,7 +4,7 @@
                 <div class="studentdata" layout="column" layout-align="center center">
                     <img src="assets/images/{{student.sgender}}.gif" alt="" class="circle_radius" width="50">
                     <div layout="row" class="m-t-15">
-                        <md-button class="md-raised md-primary md-button md-buttons ad-btn">
+                        <md-button class="md-raised md-primary md-button md-buttons ad-btn" ng-click="editStudent(student.user)">
                             Edit profile
                         </md-button>
                         <md-button class="md-raised md-primary md-button md-buttons ad-btn" ng-click="sendmsg()">
