@@ -6,6 +6,7 @@ const Students = require('../models/students');
 const Dashboard = require('../models/dashboard');
 const HealthTips = require('../models/healthtips');
 const sgMail = require('@sendgrid/mail');
+var tipNum = 0;
 
 function intervalFunc() {
   var tips;
@@ -23,21 +24,15 @@ function intervalFunc() {
               for(var i = 0; i < response.length; i++){
                 for(var j = 0; j < tips.length; j++){
                   if(response[i].shSuggest[0] == tips[j].healthIssue){
-                      //sendMail(response[i].semail, tips[j].tips[0]);
-                      // response[i].shIssue = response[i].shIssue + 1;
-                      // Credentials.findOneAndUpdate({user:response[i].user, otp:response[i].otp}, response[i], function(err, response){
-                      //     if(err){
-                      //       console.log(err);
-                      //     }else{
-                      //       console.log(response);
-                      //     }
-                      // });
+                      //sendMail(response[i].semail, tips[j].tips[tipNum]);
+                      //sendMobile(response[i].suser, tips[j].tips[tipNum]);
                   }
                 }
               }
             }
           }
       });
+      tipNum++;
     }
   });
 
@@ -45,13 +40,26 @@ function intervalFunc() {
 
 //intervalFunc();
 
+function sendMobile(toMsg, tip){
+  var accountSid = 'ACe48ad675aba4085a07693070b32dde9d';
+  var authToken = '2829bf82734762191f6a3e2748b06455';
+  var msg = '+91'+ toMsg;
+  var client = require('twilio')(accountSid, authToken);
+  client.messages.create({
+      to: msg,
+      // from: "+12244790672",
+      from: "+14158554299",
+      body: 'Next Health Care Tip: '+ tip
+  });
+}
 function sendMail(mailId, tip){
-  //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
-  //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
-  sgMail.setApiKey('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');
-  console.log('mailId', mailId);
+  //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
+  //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
+  //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
+  //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
+  sgMail.setApiKey('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');
   const msg = {
-      to: 'anandaraju520@gmail.com',
+      to: mailId,
       from: 'nexthealthcare@gmail.com',
       subject: 'Next Health Care Tips',
       text: tip,
@@ -262,6 +270,41 @@ router.get('/healthtips', (req,res,next)=>{
   });
 });
 
+
+// send notification
+router.post('/sendnotifications', (req,res,next)=>{
+  Students.findOne({user:req.body.user}, function(err, response){
+    if(err){
+      res.json({msg: 'Something went wrong with student data.', status: false});
+    }else{
+      if(response != null){
+        var toMsg = response.user;
+        var toMail = response.semail;
+        console.log('toMsg', toMsg, toMail);
+        HealthTips.find((err, healthtips)=>{
+          if(err){
+              res.json({msg:'Failed to add Health Tips', status: false});
+          }else{
+            tips = healthtips;
+            if(tipNum > 4){
+              tipNum = 0;
+            }
+            for(var i = 0; i < tips.length; i++){
+              if(response.shSuggest[0] == tips[i].healthIssue){
+                  sendMobile(toMsg, tips[i].tips[tipNum]);
+                  sendMail(toMail, tips[i].tips[tipNum]);
+              }
+            }
+            tipNum++;
+          }
+        });
+        res.json({msg: 'notifivcation sent!'});
+      }
+    }
+
+
+  });
+});
 
 
 module.exports = router;
