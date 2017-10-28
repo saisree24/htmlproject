@@ -57,7 +57,8 @@ function sendMail(mailId, tip){
   //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
   //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
   //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
-  sgMail.setApiKey('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');
+
+  sgMail.setApiKey('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');
   const msg = {
       to: mailId,
       from: 'nexthealthcare@gmail.com',
@@ -278,31 +279,17 @@ router.post('/sendnotifications', (req,res,next)=>{
       res.json({msg: 'Something went wrong with student data.', status: false});
     }else{
       if(response != null){
+        var tips = ["Take a bath in lukewarm water.", "Give yourself a sponge bath. Sponging high-heat areas like your armpits and groin with cool water can help reduce your temperature as the water evaporates.", "When you’re not bathing, place cold, damp washcloths on your forehead and the back of your neck.", "Brew a cup of yarrow tea. This herb opens your pores and triggers the sweating that is said to move a fever toward its end.", "Drink a cup of hot ginger tea, which also induces sweating.", "Sprinkle cayenne pepper on your foods when you have a fever.", "An old folk remedy for treating a fever is to soak a sheet in cold water and wrap yourself in it."];
         var toMsg = response.user;
         var toMail = response.semail;
-        console.log('toMsg', toMsg, toMail);
-        HealthTips.find((err, healthtips)=>{
-          if(err){
-              res.json({msg:'Failed to add Health Tips', status: false});
-          }else{
-            tips = healthtips;
-            if(tipNum > 4){
-              tipNum = 0;
-            }
-            for(var i = 0; i < tips.length; i++){
-              if(response.shSuggest[0] == tips[i].healthIssue){
-                  sendMobile(toMsg, tips[i].tips[tipNum]);
-                  sendMail(toMail, tips[i].tips[tipNum]);
-              }
-            }
-            tipNum++;
-          }
-        });
-        res.json({msg: 'notifivcation sent!'});
+        var randow = Math.floor(Math.random() * 10);;
+        if(randow > 7){
+          randow = 3;
+        }
+        sendMobile(toMsg, tips[randow]);
+        sendMail(toMail, tips[randow]);
       }
     }
-
-
   });
 });
 
