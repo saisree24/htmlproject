@@ -3,7 +3,7 @@
 
   angular
     .module('nextHealthCare')
-    .service("SharedProperties", function () {
+    .service("SharedProperties", function ($timeout) {
         var _userName = null;
 
         return {
@@ -15,5 +15,7 @@
                 _userName = user;
             }
         }
+
+        
     });
 })();

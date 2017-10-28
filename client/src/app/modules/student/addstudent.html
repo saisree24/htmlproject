@@ -50,6 +50,15 @@
                                 <div ng-message="required">This is required.</div>
                             </div>
                         </md-input-container>
+                        <!-- <md-input-container class="md-block m-l-10" flex="33"> 
+                                <label>State</label>
+                                <md-select ng-model="student.sbGroup">
+                                  <md-option><em>None</em></md-option>
+                                  <md-option ng-repeat="bloodgroup in ['A+','B+','O+','AB+','A-','B-','O-','AB-']" ng-value="student.sbGroup" >
+                                    {{bloodgroup}}
+                                  </md-option>
+                                </md-select>
+                              </md-input-container> -->
                         <md-input-container class="md-block m-l-10" flex="33">
                             <label>Email</label>
                             <input md-no-asterisk name="semail" ng-model="student.semail" type="email" required class="m-b-5">
