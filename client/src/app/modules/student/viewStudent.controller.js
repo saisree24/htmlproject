@@ -20,6 +20,16 @@
         }
       });
     }
+
+    $scope.sendmsg = function(){
+      var url = baseurls.url + "sendnotifications";
+      var data = {user : $stateParams.student};
+      dataService.getData(url, data).then(function(response){
+        if(response){
+          console.log('response', response);
+        }
+      });
+    }
     $scope.waistlist =
     [
       {
@@ -60,7 +70,7 @@
     ];
     $scope.bmilist = ['obese','overweight','healthy','underweight'];
     $scope.init();
-    
+
     $scope.reducereport = function(val){
       return val/8;
     }
