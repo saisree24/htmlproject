@@ -77,9 +77,9 @@
                         <div flex class="m-t-5 text-uppercase">{{item}}</div>
                         <div class="{{item}}" flex></div>
                     </div>
-                    <h3 class="m-t-45">Your suggested healthy weight range <span class="red-text">50.4 - 67.8kg</span></h3>
+                    <!-- <h3 class="m-t-45">Your suggested healthy weight range <span class="red-text">50.4 - 67.8kg</span></h3>
                     <p>&nbsp;</p>
-                    <p>&nbsp;</p>
+                    <p>&nbsp;</p> -->
                 </div>
             </div>
 
@@ -88,7 +88,7 @@
         <md-card class="p-25 m-0">
                 <h3 class="score-title">Waist-height Report <span class="md-title" ng-if="student.waistreport > 50">/ Losing <span class="red-text md-title">{{reducereport(student.waistreport)}} cm</span> off your waist</span></h3> 
                 <div layout="row" layout-align="space-between center">
-                    <div flex="50">
+                    <div flex="65">
                         <md-icon class="bmi-report animated jello infinite waist" ng-class="waistclass(student.waistreport,student.sgender)">accessibility</md-icon>
                         <span class="bmi-score">{{student.waistreport}}</span>
                         <hr class="m-t-15 m-b-15" />
@@ -102,16 +102,16 @@
                             <li>People who eat at least 3-4 ounces of protein per meal tend to feel more satisfied and eat less overall.</li>
                         </ul>
                     </div>
-                    <div flex-gt-md="45" flex-gt-sm="45" flex="50" class="bmi-scale border-top">
-                        <div layout="row" class="border-bottom" ng-repeat="item in waistlist"> 
+                    <div flex-gt-md="30" flex-gt-sm="45" flex="50" class="bmi-scale border-top">
+                        <!-- <div layout="row" class="border-bottom" ng-repeat="item in waistlist"> 
                             <div flex class="m-t-5 text-uppercare">{{item.type}}</div>                        
                             <div class="{{item.type | spaceless | lowercase}}" flex></div>
-                        </div>
+                        </div> -->
 
-                        <!-- <div layout="column" class="border-bottom m-b-10" ng-repeat="item in waistlist"> 
+                        <div layout="column" class="border-bottom m-b-10" ng-repeat="item in waistlist"> 
                                 <div flex class="m-t-5 text-uppercare m-b-5">{{item.type}}</div>                        
                                 <div class="{{item.type | spaceless | lowercase}} linebase" flex></div>
-                        </div> -->
+                        </div>
                         
                         <div layout="column" class="m-t-25" ng-if="student.waistreport > 50">
                             <span class="red-text m-b-10">You are above the 0.50 limit.</span>
