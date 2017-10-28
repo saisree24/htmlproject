@@ -15,6 +15,8 @@ const StudentsSchema = mongoose.Schema({
   sgender: { type: String, required: false},
   sage: { type: String, required: true},
   sbGroup: { type: String, required: true},
-  semail: { type: String, required: true}
+  semail: { type: String, required: true},
+  bmireport: { type: Number, required: false},
+  waistreport: { type: Number, required: false}
 });
 const Students = module.exports = mongoose.model('Students', StudentsSchema);
